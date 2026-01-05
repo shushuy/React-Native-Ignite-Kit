@@ -39,3 +39,8 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+BLOG_POST.md
+.env
+.expo-shared/
+.AppleDouble
+.LSOverride
