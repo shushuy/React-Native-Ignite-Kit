@@ -1,0 +1,20 @@
+[
+  {
+    "id": "chat-1",
+    "title": "Design Squad",
+    "lastMessage": "Pushing new mockups in 10.",
+    "avatarKey": "avatar-2"
+  },
+  {
+    "id": "chat-2",
+    "title": "Launch Crew",
+    "lastMessage": "Ship checklist looks good.",
+    "avatarKey": "avatar-3"
+  },
+  {
+    "id": "chat-3",
+    "title": "Support",
+    "lastMessage": "Ticket #182 is closed.",
+    "avatarKey": "avatar-1"
+  }
+]

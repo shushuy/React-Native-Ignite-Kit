@@ -1,0 +1,29 @@
+[
+  {
+    "id": "event-1",
+    "title": "Sprint Kickoff",
+    "date": "2026-01-06",
+    "startTime": "09:30",
+    "endTime": "10:15",
+    "location": "Studio South",
+    "description": "Align on priorities and scope for the week."
+  },
+  {
+    "id": "event-2",
+    "title": "Product Review",
+    "date": "2026-01-07",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "location": "Northline Coffee",
+    "description": "Walkthrough of the latest Ignite kit screens."
+  },
+  {
+    "id": "event-3",
+    "title": "Prototype Test",
+    "date": "2026-01-08",
+    "startTime": "16:00",
+    "endTime": "17:00",
+    "location": "Trailhead Park",
+    "description": "Capture feedback on chat and agenda flows."
+  }
+]

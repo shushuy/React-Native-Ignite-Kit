@@ -1,0 +1,46 @@
+[
+  {
+    "id": "msg-1",
+    "chatId": "chat-1",
+    "senderName": "Mia",
+    "text": "Updated the header spacing.",
+    "timestamp": "2026-01-05T15:10:00Z"
+  },
+  {
+    "id": "msg-2",
+    "chatId": "chat-1",
+    "senderName": "You",
+    "text": "Nice. Can you add the alt color too?",
+    "timestamp": "2026-01-05T15:12:00Z"
+  },
+  {
+    "id": "msg-3",
+    "chatId": "chat-1",
+    "senderName": "Mia",
+    "text": "Sure. Sending a quick preview.",
+    "timestamp": "2026-01-05T15:13:00Z",
+    "imageKey": "img-1"
+  },
+  {
+    "id": "msg-4",
+    "chatId": "chat-2",
+    "senderName": "Jordan",
+    "text": "Release branch is ready.",
+    "timestamp": "2026-01-05T14:50:00Z"
+  },
+  {
+    "id": "msg-5",
+    "chatId": "chat-2",
+    "senderName": "You",
+    "text": "Great, I'll kick off CI.",
+    "timestamp": "2026-01-05T14:52:00Z"
+  },
+  {
+    "id": "msg-6",
+    "chatId": "chat-3",
+    "senderName": "Nina",
+    "text": "Customer confirmed the fix.",
+    "timestamp": "2026-01-05T13:20:00Z",
+    "imageKey": "img-2"
+  }
+]

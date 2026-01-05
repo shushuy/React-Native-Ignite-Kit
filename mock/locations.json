@@ -1,0 +1,35 @@
+[
+  {
+    "id": "loc-1",
+    "name": "Northline Coffee",
+    "latitude": 30.2672,
+    "longitude": -97.7431,
+    "category": "Cafe",
+    "rating": 4.6,
+    "address": "123 Market St, Austin, TX",
+    "phone": "+1-512-555-0182",
+    "imageKey": "img-3"
+  },
+  {
+    "id": "loc-2",
+    "name": "Studio South",
+    "latitude": 30.2619,
+    "longitude": -97.7399,
+    "category": "Coworking",
+    "rating": 4.8,
+    "address": "98 Congress Ave, Austin, TX",
+    "phone": "+1-512-555-0114",
+    "imageKey": "img-4"
+  },
+  {
+    "id": "loc-3",
+    "name": "Trailhead Park",
+    "latitude": 30.2711,
+    "longitude": -97.7485,
+    "category": "Outdoor",
+    "rating": 4.4,
+    "address": "12 River Ln, Austin, TX",
+    "phone": "+1-512-555-0199",
+    "imageKey": "img-1"
+  }
+]
