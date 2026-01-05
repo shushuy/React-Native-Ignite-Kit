@@ -60,3 +60,13 @@ Authed Tabs (4):
 - Use React hooks as much as possible (useMemo, UseCallback)
 - Avoid inline styles, create a file name match in /styles folder
 - Keep all the functions in its own files within /utils folder with test files along like: get-string.ts + get-string.test.js
+
+## Required Context Prompt
+When starting any new task, always load these files first:
+1) `planning/README.md`
+2) `planning/codex-config.md`
+3) `planning/progress-plan.md`
+4) `planning/history.md`
+
+Prompt template:
+\"Read `planning/README.md`, then `planning/codex-config.md`, `planning/progress-plan.md`, and `planning/history.md` for full context and rules. After that, [your task].\"
