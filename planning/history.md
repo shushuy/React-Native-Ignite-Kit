@@ -42,3 +42,8 @@ Outcome: assets/avatars/avatar-1.png, assets/avatars/avatar-2.png, assets/avatar
 Title: Add planning hub references
 Summary: Linked planning files together for better agent context and added a planning README.
 Outcome: planning/README.md, planning/progress-plan.md, planning/history.md
+
+2026-01-05 04:15 PM
+Title: Consolidate planning context in codex-config
+Summary: Removed the planning README and moved its guidance into codex-config and progress-plan.
+Outcome: planning/codex-config.md, planning/progress-plan.md, planning/history.md, planning/README.md

@@ -53,6 +53,11 @@ Authed Tabs (4):
 - Always update /planning/history.md after meaningful work
 - Use comments for future devs (but don't over-comment)
 
+## Planning Context (Read This First)
+- `planning/codex-config.md` is the rulebook for architecture and code style.
+- `planning/progress-plan.md` is the build order and upcoming work.
+- `planning/history.md` shows what already changed and why.
+
 ## Codex Coding Rules
 - Use const files to avoid magic strings
 - Create unit tests for all the component files
@@ -63,10 +68,9 @@ Authed Tabs (4):
 
 ## Required Context Prompt
 When starting any new task, always load these files first:
-1) `planning/README.md`
-2) `planning/codex-config.md`
-3) `planning/progress-plan.md`
-4) `planning/history.md`
+1) `planning/codex-config.md`
+2) `planning/progress-plan.md`
+3) `planning/history.md`
 
 Prompt template:
-\"Read `planning/README.md`, then `planning/codex-config.md`, `planning/progress-plan.md`, and `planning/history.md` for full context and rules. After that, [your task].\"
+\"Read `planning/codex-config.md`, then `planning/progress-plan.md`, and `planning/history.md` for full context and rules. After that, [your task].\"
