@@ -11,21 +11,19 @@ import {
 const fallbackAvatar = require("../assets/images/icon.png");
 const fallbackImage = require("../assets/images/splash-icon.png");
 
-// TODO: Add avatar files in /assets/avatars (avatar-1.png, avatar-2.png, avatar-3.png)
-// TODO: Add image files in /assets/images (img-1.jpg, img-2.jpg, img-3.jpg, img-4.jpg)
-// TODO: Replace placeholder mappings below once assets exist.
+// TODO: Replace placeholder assets in /assets/avatars and /assets/images with real brand imagery.
 
 const avatarSourceMap: Record<AvatarKey, ImageSourcePropType> = {
-  "avatar-1": fallbackAvatar,
-  "avatar-2": fallbackAvatar,
-  "avatar-3": fallbackAvatar,
+  "avatar-1": require("../assets/avatars/avatar-1.png"),
+  "avatar-2": require("../assets/avatars/avatar-2.png"),
+  "avatar-3": require("../assets/avatars/avatar-3.png"),
 };
 
 const imageSourceMap: Record<ImageKey, ImageSourcePropType> = {
-  "img-1": fallbackImage,
-  "img-2": fallbackImage,
-  "img-3": fallbackImage,
-  "img-4": fallbackImage,
+  "img-1": require("../assets/images/img-1.png"),
+  "img-2": require("../assets/images/img-2.png"),
+  "img-3": require("../assets/images/img-3.png"),
+  "img-4": require("../assets/images/img-4.png"),
 };
 
 export const avatarKeys = AVATAR_KEYS;

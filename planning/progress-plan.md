@@ -1,5 +1,10 @@
 # Progress Plan
 
+## Planning Context (Read This First)
+- See `planning/codex-config.md` for project rules and architecture constraints.
+- See `planning/history.md` for what already shipped and which files changed.
+- See `planning/README.md` for how these planning files work together.
+
 ## Folder Structure (End State)
 ```
 /app/(auth)
