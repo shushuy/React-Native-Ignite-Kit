@@ -52,3 +52,8 @@ Outcome: planning/codex-config.md, planning/progress-plan.md, planning/history.m
 Title: Add system theming foundation
 Summary: Added ThemeContext, useTheme hook, themed styles, and applied system-based colors to layouts and screens.
 Outcome: context/ThemeContext.tsx, hooks/useTheme.ts, styles/TabsLayout.styles.ts, styles/TabOneScreen.styles.ts, styles/TabTwoScreen.styles.ts, styles/ModalScreen.styles.ts, styles/NotFoundScreen.styles.ts, app/_layout.tsx, app/(tabs)/_layout.tsx, app/(tabs)/index.tsx, app/(tabs)/two.tsx, app/modal.tsx, app/+not-found.tsx, README.md, planning/history.md
+
+2026-01-06 09:22 AM
+Title: Add splash gate and auth foundation
+Summary: Implemented SecureStore token adapter, auth context, splash routing, AppState re-check, and auth/tabs scaffolding.
+Outcome: constants/auth.ts, services/tokenStorage.ts, context/AuthContext.tsx, hooks/useAuthGate.ts, app/index.tsx, app/_layout.tsx, app/(auth)/_layout.tsx, app/(auth)/login.tsx, styles/SplashScreen.styles.ts, styles/LoginScreen.styles.ts, README.md, planning/history.md

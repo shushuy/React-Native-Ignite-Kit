@@ -7,3 +7,6 @@ Mock JSON lives in `/mock`. Asset keys in the JSON map to local images via `/ser
 
 ## Theming
 System theme only (light/dark) using `useColorScheme`. Extend the palette in `/context/ThemeContext.tsx` when new colors are needed.
+
+## Auth Flow
+The app boots into a splash gate (`/app/index.tsx`) that checks stored auth state and routes to `(auth)` or `(tabs)`. Token storage uses SecureStore via `/services/tokenStorage.ts`, with a refresh on AppState foreground.
