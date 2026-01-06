@@ -4,3 +4,6 @@ Blog Post Draft: `BLOG_POST.md` is gitignored and used for drafting.
 
 ## Mock Data
 Mock JSON lives in `/mock`. Asset keys in the JSON map to local images via `/services/assets.ts`, with fallbacks to template placeholders until real assets are added.
+
+## Theming
+System theme only (light/dark) using `useColorScheme`. Extend the palette in `/context/ThemeContext.tsx` when new colors are needed.
