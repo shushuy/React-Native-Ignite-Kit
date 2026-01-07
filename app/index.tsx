@@ -6,6 +6,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useAuthGate } from "@/hooks/useAuthGate";
 import { useTheme } from "@/hooks/useTheme";
 import { createSplashScreenStyles } from "@/styles/SplashScreen.styles";
+import { ROUTES } from "@/constants/routes";
 
 export default function SplashScreen() {
   const { colors } = useTheme();
@@ -21,12 +22,12 @@ export default function SplashScreen() {
     const currentGroup = activeSegments[0];
 
     if (isAuthenticated && currentGroup !== "(tabs)") {
-      router.replace("/(tabs)");
+      router.replace(ROUTES.tabsChat);
       return;
     }
 
     if (!isAuthenticated && currentGroup !== "(auth)") {
-      router.replace("/(auth)/login");
+      router.replace(ROUTES.authLogin);
     }
   };
 

@@ -16,6 +16,7 @@ import { loadMessages } from "@/services/mock";
 import { useTheme } from "@/hooks/useTheme";
 import { createChatDetailScreenStyles } from "@/styles/ChatDetailScreen.styles";
 import { formatTimestamp } from "@/utils/formatTimestamp";
+import { ROUTES } from "@/constants/routes";
 
 type MessageItem = ReturnType<typeof loadMessages>[number];
 
@@ -50,7 +51,7 @@ export default function ChatDetailScreen() {
 
   const handleImagePress = useCallback(
     (imageKey: string) => {
-      router.push(`/(tabs)/chat/image/${imageKey}`);
+      router.push(ROUTES.chatImage(imageKey));
     },
     [router]
   );

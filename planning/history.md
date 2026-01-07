@@ -72,3 +72,8 @@ Outcome: app/(tabs)/_layout.tsx, app/(tabs)/chat/_layout.tsx, app/(tabs)/map/_la
 Title: Implement chat list and detail flow
 Summary: Wired chat list, detail, and image viewer screens to mocked data and asset mapping.
 Outcome: app/(tabs)/chat/index.tsx, app/(tabs)/chat/[chatId].tsx, app/(tabs)/chat/image/[imageKey].tsx, app/(tabs)/chat/_layout.tsx, styles/ChatListScreen.styles.ts, styles/ChatDetailScreen.styles.ts, styles/ChatImageScreen.styles.ts, utils/formatTimestamp.ts, utils/formatTimestamp.test.ts, README.md, planning/history.md
+
+2026-01-07 01:57 PM
+Title: Fix tabs landing route
+Summary: Routed auth flow to the chat tab and centralized auth/chat routes to avoid not-found screens.
+Outcome: constants/routes.ts, app/index.tsx, app/(auth)/login.tsx, app/(auth)/forgot-password.tsx, app/(tabs)/chat/index.tsx, app/(tabs)/chat/[chatId].tsx, planning/history.md

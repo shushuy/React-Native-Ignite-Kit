@@ -6,6 +6,7 @@ import Button from "@/components/Button";
 import Input from "@/components/Input";
 import { useTheme } from "@/hooks/useTheme";
 import { createForgotPasswordScreenStyles } from "@/styles/ForgotPasswordScreen.styles";
+import { ROUTES } from "@/constants/routes";
 
 export default function ForgotPasswordScreen() {
   const { colors } = useTheme();
@@ -15,7 +16,7 @@ export default function ForgotPasswordScreen() {
 
   const handleSubmit = useCallback(() => {
     Alert.alert("Reset link sent", "If an account exists, a reset link was sent.");
-    router.replace("/(auth)/login");
+    router.replace(ROUTES.authLogin);
   }, [router]);
 
   return (
@@ -35,7 +36,7 @@ export default function ForgotPasswordScreen() {
           autoCapitalize="none"
         />
         <Button label="Send Reset Link" onPress={handleSubmit} disabled={email.trim().length === 0} />
-        <Pressable onPress={() => router.replace("/(auth)/login")}>
+        <Pressable onPress={() => router.replace(ROUTES.authLogin)}>
           <Text style={styles.linkText}>Back to Login</Text>
         </Pressable>
       </View>

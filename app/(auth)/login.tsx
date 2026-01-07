@@ -7,6 +7,7 @@ import Input from "@/components/Input";
 import { useAuth } from "@/context/AuthContext";
 import { useTheme } from "@/hooks/useTheme";
 import { createLoginScreenStyles } from "@/styles/LoginScreen.styles";
+import { ROUTES } from "@/constants/routes";
 
 export default function LoginScreen() {
   const { login } = useAuth();
@@ -18,7 +19,7 @@ export default function LoginScreen() {
 
   const handleLogin = useCallback(async () => {
     await login();
-    router.replace("/(tabs)");
+    router.replace(ROUTES.tabsChat);
   }, [login, router]);
 
   const isDisabled = email.trim().length === 0 || password.trim().length === 0;
@@ -48,7 +49,7 @@ export default function LoginScreen() {
             secureTextEntry
           />
           <View style={styles.actionRow}>
-            <Pressable onPress={() => router.push("/(auth)/forgot-password")}>
+            <Pressable onPress={() => router.push(ROUTES.authForgot)}>
               <Text style={styles.linkText}>Forgot Password?</Text>
             </Pressable>
           </View>

@@ -6,6 +6,7 @@ import { getAvatarSource } from "@/services/assets";
 import { loadChats } from "@/services/mock";
 import { useTheme } from "@/hooks/useTheme";
 import { createChatListScreenStyles } from "@/styles/ChatListScreen.styles";
+import { ROUTES } from "@/constants/routes";
 
 type ChatItem = ReturnType<typeof loadChats>[number];
 
@@ -17,7 +18,7 @@ export default function ChatScreen() {
 
   const handlePress = useCallback(
     (chatId: string) => {
-      router.push(`/(tabs)/chat/${chatId}`);
+      router.push(ROUTES.chatDetail(chatId));
     },
     [router]
   );
