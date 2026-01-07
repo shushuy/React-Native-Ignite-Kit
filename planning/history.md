@@ -97,3 +97,8 @@ Outcome: app/(tabs)/_layout.tsx, planning/history.md
 Title: Add safe area padding to main tabs
 Summary: Wrapped main tab screens in SafeAreaView to restore top spacing.
 Outcome: app/(tabs)/chat/index.tsx, app/(tabs)/map/index.tsx, app/(tabs)/agenda/index.tsx, app/(tabs)/profile/index.tsx, planning/history.md
+
+2026-01-07 02:20 PM
+Title: Move map data to Mapleton UT
+Summary: Updated mock locations to center around Mapleton, Utah.
+Outcome: mock/locations.json, planning/history.md
