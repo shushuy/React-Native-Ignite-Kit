@@ -67,3 +67,8 @@ Outcome: components/Button.tsx, components/Input.tsx, styles/Button.styles.ts, s
 Title: Add tabs structure scaffolding
 Summary: Built the four-tab layout with nested stacks and placeholder screens wired to logout.
 Outcome: app/(tabs)/_layout.tsx, app/(tabs)/chat/_layout.tsx, app/(tabs)/map/_layout.tsx, app/(tabs)/agenda/_layout.tsx, app/(tabs)/profile/_layout.tsx, app/(tabs)/chat/index.tsx, app/(tabs)/map/index.tsx, app/(tabs)/agenda/index.tsx, app/(tabs)/profile/index.tsx, styles/ChatScreen.styles.ts, styles/MapScreen.styles.ts, styles/AgendaScreen.styles.ts, styles/ProfileScreen.styles.ts, README.md, planning/history.md, app/(tabs)/index.tsx, app/(tabs)/two.tsx
+
+2026-01-07 01:51 PM
+Title: Implement chat list and detail flow
+Summary: Wired chat list, detail, and image viewer screens to mocked data and asset mapping.
+Outcome: app/(tabs)/chat/index.tsx, app/(tabs)/chat/[chatId].tsx, app/(tabs)/chat/image/[imageKey].tsx, app/(tabs)/chat/_layout.tsx, styles/ChatListScreen.styles.ts, styles/ChatDetailScreen.styles.ts, styles/ChatImageScreen.styles.ts, utils/formatTimestamp.ts, utils/formatTimestamp.test.ts, README.md, planning/history.md

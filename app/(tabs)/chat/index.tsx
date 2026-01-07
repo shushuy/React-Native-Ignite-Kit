@@ -1,30 +1,52 @@
 import { useCallback, useMemo } from "react";
-import { Text, View } from "react-native";
+import { FlatList, Image, Pressable, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 
-import Button from "@/components/Button";
-import { useAuth } from "@/context/AuthContext";
+import { getAvatarSource } from "@/services/assets";
+import { loadChats } from "@/services/mock";
 import { useTheme } from "@/hooks/useTheme";
-import { createChatScreenStyles } from "@/styles/ChatScreen.styles";
+import { createChatListScreenStyles } from "@/styles/ChatListScreen.styles";
+
+type ChatItem = ReturnType<typeof loadChats>[number];
 
 export default function ChatScreen() {
   const { colors } = useTheme();
-  const styles = useMemo(() => createChatScreenStyles(colors), [colors]);
-  const { logout } = useAuth();
+  const styles = useMemo(() => createChatListScreenStyles(colors), [colors]);
   const router = useRouter();
+  const chats = useMemo(() => loadChats(), []);
 
-  const handleLogout = useCallback(async () => {
-    await logout();
-    router.replace("/(auth)/login");
-  }, [logout, router]);
+  const handlePress = useCallback(
+    (chatId: string) => {
+      router.push(`/(tabs)/chat/${chatId}`);
+    },
+    [router]
+  );
+
+  const renderItem = useCallback(
+    ({ item }: { item: ChatItem }) => (
+      <Pressable onPress={() => handlePress(item.id)} style={styles.row}>
+        <Image source={getAvatarSource(item.avatarKey)} style={styles.avatar} />
+        <View style={styles.rowBody}>
+          <Text style={styles.rowTitle}>{item.title}</Text>
+          <Text style={styles.rowSubtitle}>{item.lastMessage}</Text>
+        </View>
+      </Pressable>
+    ),
+    [handlePress, styles]
+  );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Chat</Text>
-      <Text style={styles.description}>Chats and message threads will live here.</Text>
-      <View style={styles.footer}>
-        <Button label="Log out" onPress={handleLogout} />
+      <View style={styles.header}>
+        <Text style={styles.title}>Chat</Text>
+        <Text style={styles.subtitle}>Pick a thread to continue the conversation.</Text>
       </View>
+      <FlatList
+        data={chats}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        contentContainerStyle={styles.listContent}
+      />
     </View>
   );
 }

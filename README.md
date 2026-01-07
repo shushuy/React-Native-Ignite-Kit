@@ -16,3 +16,6 @@ Login and Forgot Password are themed screens with mocked auth behavior. Login se
 
 ## Tabs Structure
 The authenticated experience uses four tabs (Chat, Map, Agenda, Profile) with a nested stack inside each tab for future detail routes.
+
+## Chat
+Chat flows from list → detail → image viewer, using mocked JSON data and local asset key mapping.
