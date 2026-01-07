@@ -82,3 +82,8 @@ Outcome: constants/routes.ts, app/index.tsx, app/(auth)/login.tsx, app/(auth)/fo
 Title: Implement map feature flow
 Summary: Added map rendering, marker navigation to details, and business detail screen wired to mock data.
 Outcome: app/(tabs)/map/index.tsx, app/(tabs)/map/_layout.tsx, app/(tabs)/map/[locationId].tsx, styles/MapScreen.styles.ts, styles/MapDetailScreen.styles.ts, utils/calcMapRegion.ts, utils/calcMapRegion.test.ts, constants/map.ts, constants/routes.ts, mock/locations.json, types/mock.ts, README.md, planning/history.md
+
+2026-01-07 02:09 PM
+Title: Hide headers on main screens
+Summary: Removed stack headers for main landing views while keeping detail headers.
+Outcome: app/(auth)/_layout.tsx, app/(tabs)/chat/_layout.tsx, app/(tabs)/map/_layout.tsx, app/(tabs)/agenda/_layout.tsx, app/(tabs)/profile/_layout.tsx, planning/history.md
