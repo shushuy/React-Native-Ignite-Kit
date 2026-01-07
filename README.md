@@ -13,3 +13,6 @@ The app boots into a splash gate (`/app/index.tsx`) that checks stored auth stat
 
 ## Auth Screens
 Login and Forgot Password are themed screens with mocked auth behavior. Login sets a fake token; Forgot Password shows a confirmation alert.
+
+## Tabs Structure
+The authenticated experience uses four tabs (Chat, Map, Agenda, Profile) with a nested stack inside each tab for future detail routes.
