@@ -77,3 +77,8 @@ Outcome: app/(tabs)/chat/index.tsx, app/(tabs)/chat/[chatId].tsx, app/(tabs)/cha
 Title: Fix tabs landing route
 Summary: Routed auth flow to the chat tab and centralized auth/chat routes to avoid not-found screens.
 Outcome: constants/routes.ts, app/index.tsx, app/(auth)/login.tsx, app/(auth)/forgot-password.tsx, app/(tabs)/chat/index.tsx, app/(tabs)/chat/[chatId].tsx, planning/history.md
+
+2026-01-07 02:05 PM
+Title: Implement map feature flow
+Summary: Added map rendering, marker navigation to details, and business detail screen wired to mock data.
+Outcome: app/(tabs)/map/index.tsx, app/(tabs)/map/_layout.tsx, app/(tabs)/map/[locationId].tsx, styles/MapScreen.styles.ts, styles/MapDetailScreen.styles.ts, utils/calcMapRegion.ts, utils/calcMapRegion.test.ts, constants/map.ts, constants/routes.ts, mock/locations.json, types/mock.ts, README.md, planning/history.md

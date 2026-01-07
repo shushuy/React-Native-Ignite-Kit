@@ -35,6 +35,7 @@ export type Location = {
   address: string;
   phone: string;
   imageKey: ImageKey;
+  description?: string;
 };
 
 export type Event = {

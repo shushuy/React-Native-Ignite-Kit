@@ -7,20 +7,23 @@ export const createMapScreenStyles = (colors: ThemeColors) =>
     container: {
       flex: 1,
       backgroundColor: colors.background,
-      padding: 24,
+    },
+    header: {
+      paddingHorizontal: 20,
+      paddingTop: 20,
+      paddingBottom: 12,
     },
     title: {
       fontSize: 24,
       fontWeight: "700",
       color: colors.text,
-      marginBottom: 8,
+      marginBottom: 4,
     },
-    description: {
+    subtitle: {
       fontSize: 14,
       color: colors.mutedText,
-      marginBottom: 24,
     },
-    footer: {
-      marginTop: "auto",
+    map: {
+      flex: 1,
     },
   });

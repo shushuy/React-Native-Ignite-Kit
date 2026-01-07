@@ -19,3 +19,6 @@ The authenticated experience uses four tabs (Chat, Map, Agenda, Profile) with a 
 
 ## Chat
 Chat flows from list → detail → image viewer, using mocked JSON data and local asset key mapping.
+
+## Map
+Map markers come from mock locations; tapping a marker opens the detail screen.
