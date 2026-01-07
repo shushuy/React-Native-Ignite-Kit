@@ -22,3 +22,6 @@ Chat flows from list → detail → image viewer, using mocked JSON data and loc
 
 ## Map
 Map markers come from mock locations; tapping a marker opens the detail screen.
+
+## Agenda
+Calendar shows marked dates; selecting a day lists events, and tapping one opens the detail view.

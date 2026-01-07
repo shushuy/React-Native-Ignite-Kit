@@ -102,3 +102,8 @@ Outcome: app/(tabs)/chat/index.tsx, app/(tabs)/map/index.tsx, app/(tabs)/agenda/
 Title: Move map data to Mapleton UT
 Summary: Updated mock locations to center around Mapleton, Utah.
 Outcome: mock/locations.json, planning/history.md
+
+2026-01-07 02:28 PM
+Title: Implement agenda calendar flow
+Summary: Added calendar view with marked dates, event list by day, and event detail screen.
+Outcome: app/(tabs)/agenda/index.tsx, app/(tabs)/agenda/_layout.tsx, app/(tabs)/agenda/[eventId].tsx, styles/AgendaScreen.styles.ts, styles/AgendaDetailScreen.styles.ts, utils/eventUtils.ts, utils/eventUtils.test.ts, constants/routes.ts, README.md, planning/history.md

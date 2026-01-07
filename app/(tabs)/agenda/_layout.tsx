@@ -4,6 +4,7 @@ export default function AgendaLayout() {
   return (
     <Stack>
       <Stack.Screen name="index" options={{ title: "Agenda", headerShown: false }} />
+      <Stack.Screen name="[eventId]" options={{ title: "Event" }} />
     </Stack>
   );
 }
