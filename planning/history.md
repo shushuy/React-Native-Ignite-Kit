@@ -107,3 +107,23 @@ Outcome: mock/locations.json, planning/history.md
 Title: Implement agenda calendar flow
 Summary: Added calendar view with marked dates, event list by day, and event detail screen.
 Outcome: app/(tabs)/agenda/index.tsx, app/(tabs)/agenda/_layout.tsx, app/(tabs)/agenda/[eventId].tsx, styles/AgendaScreen.styles.ts, styles/AgendaDetailScreen.styles.ts, utils/eventUtils.ts, utils/eventUtils.test.ts, constants/routes.ts, README.md, planning/history.md
+
+2026-01-07 02:33 PM
+Title: Switch agenda to Agenda component
+Summary: Replaced Calendar with Agenda while keeping the event list below.
+Outcome: app/(tabs)/agenda/index.tsx, planning/history.md
+
+2026-01-07 03:01 PM
+Title: Patch react-native-calendars Agenda update logic
+Summary: Applied a patch-package fix for Agenda reservation updates.
+Outcome: node_modules/react-native-calendars/src/agenda/reservation-list/index.js, patches/react-native-calendars+1.1313.0.patch, package.json, planning/history.md
+
+2026-01-07 03:04 PM
+Title: Fix patch-package parse error
+Summary: Updated the react-native-calendars patch file with proper hunk headers.
+Outcome: patches/react-native-calendars+1.1313.0.patch, planning/history.md
+
+2026-01-07 03:10 PM
+Title: Regenerate Agenda patch file
+Summary: Rebuilt the react-native-calendars patch with proper headers so patch-package applies cleanly.
+Outcome: patches/react-native-calendars+1.1313.0.patch, planning/history.md

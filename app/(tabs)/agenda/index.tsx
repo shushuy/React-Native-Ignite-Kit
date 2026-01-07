@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { FlatList, Pressable, Text, View } from "react-native";
-import { Calendar } from "react-native-calendars";
+import { Agenda } from "react-native-calendars";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
@@ -19,35 +19,23 @@ export default function AgendaScreen() {
   const initialDate = useMemo(() => getDefaultEventDate(events, today), [events, today]);
   const [selectedDate, setSelectedDate] = useState(initialDate);
 
-  const markedDates = useMemo(() => {
-    const dates = getEventDates(events);
-    return dates.reduce<Record<string, { marked: boolean; dotColor: string }>>((acc, date) => {
-      acc[date] = { marked: true, dotColor: colors.primary };
+  const items = useMemo(() => {
+    return getEventDates(events).reduce<Record<string, { id: string }[]>>((acc, date) => {
+      acc[date] = getEventsByDate(events, date).map((event) => ({ id: event.id }));
       return acc;
     }, {});
-  }, [events, colors.primary]);
+  }, [events]);
 
-  const selectedEvents = useMemo(
-    () => getEventsByDate(events, selectedDate),
-    [events, selectedDate]
-  );
+  const selectedEvents = useMemo(() => getEventsByDate(events, selectedDate), [events, selectedDate]);
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Agenda</Text>
       <Text style={styles.subtitle}>Plan your schedule and track upcoming events.</Text>
       <View style={styles.calendar}>
-        <Calendar
-          current={selectedDate}
-          markedDates={{
-            ...markedDates,
-            [selectedDate]: {
-              selected: true,
-              selectedColor: colors.primary,
-              marked: Boolean(markedDates[selectedDate]),
-              dotColor: colors.card,
-            },
-          }}
+        <Agenda
+          selected={selectedDate}
+          items={items}
           onDayPress={(day) => setSelectedDate(day.dateString)}
           theme={{
             backgroundColor: colors.card,
@@ -57,7 +45,11 @@ export default function AgendaScreen() {
             textSectionTitleColor: colors.mutedText,
             todayTextColor: colors.primary,
             arrowColor: colors.text,
+            agendaDayTextColor: colors.mutedText,
+            agendaDayNumColor: colors.text,
+            agendaTodayColor: colors.primary,
           }}
+          renderEmptyData={() => null}
         />
       </View>
       <Text style={styles.listTitle}>Events on {selectedDate}</Text>
