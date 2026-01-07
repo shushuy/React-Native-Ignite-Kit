@@ -57,3 +57,8 @@ Outcome: context/ThemeContext.tsx, hooks/useTheme.ts, styles/TabsLayout.styles.t
 Title: Add splash gate and auth foundation
 Summary: Implemented SecureStore token adapter, auth context, splash routing, AppState re-check, and auth/tabs scaffolding.
 Outcome: constants/auth.ts, services/tokenStorage.ts, context/AuthContext.tsx, hooks/useAuthGate.ts, app/index.tsx, app/_layout.tsx, app/(auth)/_layout.tsx, app/(auth)/login.tsx, styles/SplashScreen.styles.ts, styles/LoginScreen.styles.ts, README.md, planning/history.md
+
+2026-01-07 01:22 PM
+Title: Implement auth stack screens
+Summary: Added reusable auth components, built login and forgot password flows, and updated auth layouts.
+Outcome: components/Button.tsx, components/Input.tsx, styles/Button.styles.ts, styles/Input.styles.ts, styles/LoginScreen.styles.ts, styles/ForgotPasswordScreen.styles.ts, app/(auth)/_layout.tsx, app/(auth)/login.tsx, app/(auth)/forgot-password.tsx, README.md, planning/history.md

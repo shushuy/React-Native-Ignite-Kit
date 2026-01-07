@@ -10,3 +10,6 @@ System theme only (light/dark) using `useColorScheme`. Extend the palette in `/c
 
 ## Auth Flow
 The app boots into a splash gate (`/app/index.tsx`) that checks stored auth state and routes to `(auth)` or `(tabs)`. Token storage uses SecureStore via `/services/tokenStorage.ts`, with a refresh on AppState foreground.
+
+## Auth Screens
+Login and Forgot Password are themed screens with mocked auth behavior. Login sets a fake token; Forgot Password shows a confirmation alert.

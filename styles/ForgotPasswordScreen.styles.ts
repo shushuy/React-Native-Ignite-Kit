@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 import type { ThemeColors } from "@/context/ThemeContext";
 
-export const createLoginScreenStyles = (colors: ThemeColors) =>
+export const createForgotPasswordScreenStyles = (colors: ThemeColors) =>
   StyleSheet.create({
     container: {
       flex: 1,
@@ -24,16 +24,10 @@ export const createLoginScreenStyles = (colors: ThemeColors) =>
       color: colors.mutedText,
       marginBottom: 24,
     },
-    form: {
-      marginTop: 8,
-    },
-    actionRow: {
-      alignItems: "flex-end",
-      marginBottom: 20,
-    },
     linkText: {
       color: colors.primary,
       fontSize: 14,
       fontWeight: "600",
+      marginTop: 16,
     },
   });
