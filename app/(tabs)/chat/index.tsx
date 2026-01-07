@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { FlatList, Image, Pressable, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
 import { getAvatarSource } from "@/services/assets";
@@ -37,7 +38,7 @@ export default function ChatScreen() {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Chat</Text>
         <Text style={styles.subtitle}>Pick a thread to continue the conversation.</Text>
@@ -48,6 +49,6 @@ export default function ChatScreen() {
         renderItem={renderItem}
         contentContainerStyle={styles.listContent}
       />
-    </View>
+    </SafeAreaView>
   );
 }

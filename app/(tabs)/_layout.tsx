@@ -2,7 +2,6 @@ import React, { useMemo } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
 
-import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 import { useTheme } from "@/hooks/useTheme";
 import { createTabsLayoutStyles } from "@/styles/TabsLayout.styles";
 
@@ -21,9 +20,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.mutedText,
         tabBarStyle: styles.tabBar,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
+        headerShown: false,
       }}
     >
       <Tabs.Screen

@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
 import Button from "@/components/Button";
@@ -19,7 +20,7 @@ export default function ProfileScreen() {
   }, [logout, router]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Profile</Text>
       <Text style={styles.description}>
         Account settings, plan info, and notifications will be managed here.
@@ -27,6 +28,6 @@ export default function ProfileScreen() {
       <View style={styles.footer}>
         <Button label="Log out" onPress={handleLogout} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }

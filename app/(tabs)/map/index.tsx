@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Callout, Marker } from "react-native-maps";
 import MapView from "react-native-maps";
 import { useRouter } from "expo-router";
@@ -18,7 +19,7 @@ export default function MapScreen() {
   const region = useMemo(() => calcMapRegion(locations), [locations]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Map</Text>
         <Text style={styles.subtitle}>Tap a marker to view the business details.</Text>
@@ -38,6 +39,6 @@ export default function MapScreen() {
           </Marker>
         ))}
       </MapView>
-    </View>
+    </SafeAreaView>
   );
 }

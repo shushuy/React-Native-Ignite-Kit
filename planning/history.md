@@ -87,3 +87,13 @@ Outcome: app/(tabs)/map/index.tsx, app/(tabs)/map/_layout.tsx, app/(tabs)/map/[l
 Title: Hide headers on main screens
 Summary: Removed stack headers for main landing views while keeping detail headers.
 Outcome: app/(auth)/_layout.tsx, app/(tabs)/chat/_layout.tsx, app/(tabs)/map/_layout.tsx, app/(tabs)/agenda/_layout.tsx, app/(tabs)/profile/_layout.tsx, planning/history.md
+
+2026-01-07 02:12 PM
+Title: Remove tab headers on root screens
+Summary: Disabled tab header rendering so only nested stack screens show headers.
+Outcome: app/(tabs)/_layout.tsx, planning/history.md
+
+2026-01-07 02:13 PM
+Title: Add safe area padding to main tabs
+Summary: Wrapped main tab screens in SafeAreaView to restore top spacing.
+Outcome: app/(tabs)/chat/index.tsx, app/(tabs)/map/index.tsx, app/(tabs)/agenda/index.tsx, app/(tabs)/profile/index.tsx, planning/history.md

@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
 import Button from "@/components/Button";
@@ -19,12 +20,12 @@ export default function AgendaScreen() {
   }, [logout, router]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Agenda</Text>
       <Text style={styles.description}>Calendar entries and events will appear here.</Text>
       <View style={styles.footer}>
         <Button label="Log out" onPress={handleLogout} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
