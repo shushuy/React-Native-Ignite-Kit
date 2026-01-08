@@ -152,3 +152,8 @@ Outcome: app/(tabs)/agenda/index.tsx, styles/AgendaScreen.styles.ts, utils/getIn
 Title: Generate dynamic agenda events
 Summary: Added dynamic event generation around today with capped totals and cached mock loading.
 Outcome: constants/agenda.ts, mock/events.json, utils/generateAgendaEvents.ts, utils/generateAgendaEvents.test.ts, services/mock.ts, planning/history.md
+
+2026-01-08 04:19 PM
+Title: Add local notifications demo
+Summary: Added a notifications hook, profile UI controls, and README notes for local notification scaffolding.
+Outcome: hooks/useNotifications.ts, constants/notifications.ts, constants/profile.ts, app/(tabs)/profile/index.tsx, styles/ProfileScreen.styles.ts, README.md, planning/history.md

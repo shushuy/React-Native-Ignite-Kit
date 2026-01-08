@@ -25,3 +25,6 @@ Map markers come from mock locations; tapping a marker opens the detail screen.
 
 ## Agenda
 Calendar shows marked dates; selecting a day lists events, and tapping one opens the detail view.
+
+## Notifications (Local Demo)
+The Profile tab includes a local notifications demo using `expo-notifications`. Remote push requires extra setup (including device tokens and server-side delivery) and a physical device.
