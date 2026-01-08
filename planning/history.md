@@ -142,3 +142,8 @@ Outcome: app/(tabs)/agenda/index.tsx, styles/AgendaScreen.styles.ts, planning/hi
 Title: Align agenda with legacy schedule flow
 Summary: Switched agenda to the legacy Agenda list behavior, added ShiftBar, and created supporting utils/tests.
 Outcome: app/(tabs)/agenda/index.tsx, components/ShiftBar.tsx, components/__tests__/ShiftBar.test.tsx, styles/AgendaScreen.styles.ts, styles/ShiftBar.styles.ts, utils/timeToString.ts, utils/timeToString.test.ts, utils/agendaRowHasChanged.ts, utils/agendaRowHasChanged.test.ts, utils/getShiftBarPosition.ts, utils/getShiftBarPosition.test.ts, planning/history.md
+
+2026-01-08 12:56 PM
+Title: Add agenda initials chip
+Summary: Added a right-aligned initials chip in agenda items with a shared initials helper.
+Outcome: app/(tabs)/agenda/index.tsx, styles/AgendaScreen.styles.ts, utils/getInitials.ts, utils/getInitials.test.ts, planning/history.md

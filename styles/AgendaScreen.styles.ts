@@ -34,10 +34,28 @@ export const createAgendaScreenStyles = (colors: ThemeColors) =>
       overflow: "hidden",
       gap: 4,
     },
+    agendaRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
     agendaTime: {
       fontSize: 13,
       fontWeight: "600",
       color: colors.text,
+    },
+    agendaChip: {
+      height: 32,
+      width: 32,
+      borderRadius: 16,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: colors.primary,
+    },
+    agendaChipText: {
+      fontSize: 12,
+      fontWeight: "700",
+      color: colors.card,
     },
     agendaTitle: {
       fontSize: 15,

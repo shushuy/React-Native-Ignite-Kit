@@ -10,6 +10,7 @@ import { createAgendaScreenStyles } from "@/styles/AgendaScreen.styles";
 import { loadEvents } from "@/services/mock";
 import { getDefaultEventDate } from "@/utils/eventUtils";
 import { agendaRowHasChanged } from "@/utils/agendaRowHasChanged";
+import { getInitials } from "@/utils/getInitials";
 import { timeToString } from "@/utils/timeToString";
 import { ROUTES } from "@/constants/routes";
 
@@ -76,11 +77,16 @@ export default function AgendaScreen() {
         style={styles.agendaItem}
       >
         <ShiftBar startTime={item.startTime} endTime={item.endTime} />
+        <View style={styles.agendaRow}>
+          <Text style={styles.agendaTime}>
+            {item.startTime} - {item.endTime}
+          </Text>
+          <View style={styles.agendaChip}>
+            <Text style={styles.agendaChipText}>{getInitials(item.name)}</Text>
+          </View>
+        </View>
         <Text style={styles.agendaTitle}>{item.name}</Text>
         <Text style={styles.agendaLocation}>{item.location}</Text>
-        <Text style={styles.agendaTime}>
-          {item.startTime} - {item.endTime}
-        </Text>
       </Pressable>
     ),
     [router, styles]

@@ -1,8 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import { ThemeProvider } from "@/context/ThemeContext";
-import { ShiftBar } from "@/components/ShiftBar";
+import { ThemeProvider } from "../../context/ThemeContext";
+import { ShiftBar } from "../ShiftBar";
 
 describe("ShiftBar", () => {
   it("renders correctly", () => {
