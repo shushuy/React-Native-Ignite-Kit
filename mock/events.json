@@ -9,6 +9,15 @@
     "description": "Align on priorities and scope for the week."
   },
   {
+    "id": "event-4",
+    "title": "Design Sync",
+    "date": "2026-01-06",
+    "startTime": "11:00",
+    "endTime": "11:45",
+    "location": "Creekside Room",
+    "description": "Review the latest UI updates and polish agenda visuals."
+  },
+  {
     "id": "event-2",
     "title": "Product Review",
     "date": "2026-01-07",
@@ -18,6 +27,15 @@
     "description": "Walkthrough of the latest Ignite kit screens."
   },
   {
+    "id": "event-5",
+    "title": "Partner Call",
+    "date": "2026-01-07",
+    "startTime": "15:30",
+    "endTime": "16:00",
+    "location": "Zoom",
+    "description": "Confirm deliverables and timelines with the partner team."
+  },
+  {
     "id": "event-3",
     "title": "Prototype Test",
     "date": "2026-01-08",
@@ -25,5 +43,41 @@
     "endTime": "17:00",
     "location": "Trailhead Park",
     "description": "Capture feedback on chat and agenda flows."
+  },
+  {
+    "id": "event-6",
+    "title": "Crew Lunch",
+    "date": "2026-01-08",
+    "startTime": "12:00",
+    "endTime": "13:00",
+    "location": "Mapleton Deli",
+    "description": "Team lunch to reset before afternoon sessions."
+  },
+  {
+    "id": "event-7",
+    "title": "Maps QA",
+    "date": "2026-01-09",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "location": "Lab 3",
+    "description": "Validate marker flows and detail routes on multiple devices."
+  },
+  {
+    "id": "event-8",
+    "title": "Content Review",
+    "date": "2026-01-09",
+    "startTime": "14:00",
+    "endTime": "14:30",
+    "location": "Studio North",
+    "description": "Finalize agenda copy and profile checklist."
+  },
+  {
+    "id": "event-9",
+    "title": "Community Meetup",
+    "date": "2026-01-10",
+    "startTime": "18:30",
+    "endTime": "20:00",
+    "location": "Maple Center",
+    "description": "Local demo night with lightning talks and networking."
   }
 ]

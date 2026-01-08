@@ -147,3 +147,8 @@ Outcome: app/(tabs)/agenda/index.tsx, components/ShiftBar.tsx, components/__test
 Title: Add agenda initials chip
 Summary: Added a right-aligned initials chip in agenda items with a shared initials helper.
 Outcome: app/(tabs)/agenda/index.tsx, styles/AgendaScreen.styles.ts, utils/getInitials.ts, utils/getInitials.test.ts, planning/history.md
+
+2026-01-08 01:45 PM
+Title: Generate dynamic agenda events
+Summary: Added dynamic event generation around today with capped totals and cached mock loading.
+Outcome: constants/agenda.ts, mock/events.json, utils/generateAgendaEvents.ts, utils/generateAgendaEvents.test.ts, services/mock.ts, planning/history.md
