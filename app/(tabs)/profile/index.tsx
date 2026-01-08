@@ -4,7 +4,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
 import Button from "@/components/Button";
+import { PROFILE_COPY, PROFILE_PERMISSION_LABELS } from "@/constants/profile";
 import { useAuth } from "@/context/AuthContext";
+import { useNotifications } from "@/hooks/useNotifications";
 import { useTheme } from "@/hooks/useTheme";
 import { createProfileScreenStyles } from "@/styles/ProfileScreen.styles";
 
@@ -13,6 +15,10 @@ export default function ProfileScreen() {
   const styles = useMemo(() => createProfileScreenStyles(colors), [colors]);
   const { logout } = useAuth();
   const router = useRouter();
+  const { permissionStatus, requestPermissions, sendInstantTestNotification, scheduleTestNotification } =
+    useNotifications();
+  const permissionLabel =
+    PROFILE_PERMISSION_LABELS[permissionStatus] ?? PROFILE_PERMISSION_LABELS.undetermined;
 
   const handleLogout = useCallback(async () => {
     await logout();
@@ -21,12 +27,33 @@ export default function ProfileScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
-      <Text style={styles.description}>
-        Account settings, plan info, and notifications will be managed here.
-      </Text>
+      <Text style={styles.title}>{PROFILE_COPY.title}</Text>
+      <Text style={styles.description}>{PROFILE_COPY.description}</Text>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>{PROFILE_COPY.notificationsTitle}</Text>
+        <View style={styles.statusRow}>
+          <Text style={styles.statusLabel}>{PROFILE_COPY.notificationsStatusLabel}</Text>
+          <Text style={styles.statusValue}>{permissionLabel}</Text>
+        </View>
+        <View style={styles.buttonStack}>
+          {permissionStatus !== "granted" ? (
+            <View style={styles.buttonRow}>
+              <Button label={PROFILE_COPY.enableNotifications} onPress={requestPermissions} />
+            </View>
+          ) : null}
+          <View style={styles.buttonRow}>
+            <Button label={PROFILE_COPY.sendTestNotification} onPress={sendInstantTestNotification} />
+          </View>
+          <View style={styles.buttonRow}>
+            <Button
+              label={PROFILE_COPY.scheduleTestNotification}
+              onPress={scheduleTestNotification}
+            />
+          </View>
+        </View>
+      </View>
       <View style={styles.footer}>
-        <Button label="Log out" onPress={handleLogout} />
+        <Button label={PROFILE_COPY.logout} onPress={handleLogout} />
       </View>
     </SafeAreaView>
   );
