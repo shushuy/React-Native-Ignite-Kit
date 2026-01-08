@@ -132,3 +132,13 @@ Outcome: patches/react-native-calendars+1.1313.0.patch, planning/history.md
 Title: Refresh agenda layout to match legacy schedule styles
 Summary: Updated the agenda list and event detail layouts to follow the old schedule styling and structure.
 Outcome: app/(tabs)/agenda/index.tsx, styles/AgendaScreen.styles.ts, app/(tabs)/agenda/[eventId].tsx, styles/AgendaDetailScreen.styles.ts, planning/history.md
+
+2026-01-08 11:58 AM
+Title: Simplify agenda time rows
+Summary: Removed the duplicated start/end time rows to reduce agenda card density.
+Outcome: app/(tabs)/agenda/index.tsx, styles/AgendaScreen.styles.ts, planning/history.md
+
+2026-01-08 12:31 PM
+Title: Align agenda with legacy schedule flow
+Summary: Switched agenda to the legacy Agenda list behavior, added ShiftBar, and created supporting utils/tests.
+Outcome: app/(tabs)/agenda/index.tsx, components/ShiftBar.tsx, components/__tests__/ShiftBar.test.tsx, styles/AgendaScreen.styles.ts, styles/ShiftBar.styles.ts, utils/timeToString.ts, utils/timeToString.test.ts, utils/agendaRowHasChanged.ts, utils/agendaRowHasChanged.test.ts, utils/getShiftBarPosition.ts, utils/getShiftBarPosition.test.ts, planning/history.md

@@ -24,40 +24,6 @@ export const createAgendaScreenStyles = (colors: ThemeColors) =>
       fontSize: 14,
       color: colors.mutedText,
     },
-    calendar: {
-      marginHorizontal: 16,
-      borderRadius: 12,
-      overflow: "hidden",
-      borderWidth: 1,
-      borderColor: colors.border,
-      backgroundColor: colors.card,
-    },
-    agendaSection: {
-      marginTop: 12,
-      paddingHorizontal: 16,
-      gap: 8,
-    },
-    agendaHeader: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-    },
-    agendaHeaderTitle: {
-      fontSize: 16,
-      fontWeight: "600",
-      color: colors.text,
-    },
-    agendaHeaderCount: {
-      fontSize: 12,
-      fontWeight: "600",
-      textTransform: "uppercase",
-      letterSpacing: 0.6,
-      color: colors.mutedText,
-    },
-    agendaList: {
-      gap: 8,
-      paddingBottom: 12,
-    },
     agendaItem: {
       padding: 12,
       borderRadius: 10,
@@ -69,25 +35,6 @@ export const createAgendaScreenStyles = (colors: ThemeColors) =>
       gap: 4,
     },
     agendaTime: {
-      fontSize: 13,
-      fontWeight: "600",
-      color: colors.text,
-    },
-    agendaTimes: {
-      gap: 4,
-    },
-    agendaTimeRow: {
-      flexDirection: "row",
-      alignItems: "center",
-      gap: 6,
-    },
-    agendaTimeLabel: {
-      fontSize: 12,
-      fontWeight: "600",
-      textTransform: "uppercase",
-      color: colors.mutedText,
-    },
-    agendaTimeValue: {
       fontSize: 13,
       fontWeight: "600",
       color: colors.text,
