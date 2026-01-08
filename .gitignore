@@ -44,3 +44,6 @@ BLOG_POST.md
 .expo-shared/
 .AppleDouble
 .LSOverride
+
+# UI and utility local folders
+/oldComponents

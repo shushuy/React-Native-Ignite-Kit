@@ -127,3 +127,8 @@ Outcome: patches/react-native-calendars+1.1313.0.patch, planning/history.md
 Title: Regenerate Agenda patch file
 Summary: Rebuilt the react-native-calendars patch with proper headers so patch-package applies cleanly.
 Outcome: patches/react-native-calendars+1.1313.0.patch, planning/history.md
+
+2026-01-08 11:55 AM
+Title: Refresh agenda layout to match legacy schedule styles
+Summary: Updated the agenda list and event detail layouts to follow the old schedule styling and structure.
+Outcome: app/(tabs)/agenda/index.tsx, styles/AgendaScreen.styles.ts, app/(tabs)/agenda/[eventId].tsx, styles/AgendaDetailScreen.styles.ts, planning/history.md

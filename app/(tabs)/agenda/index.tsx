@@ -27,11 +27,17 @@ export default function AgendaScreen() {
   }, [events]);
 
   const selectedEvents = useMemo(() => getEventsByDate(events, selectedDate), [events, selectedDate]);
+  const eventCountLabel = useMemo(() => {
+    const count = selectedEvents.length;
+    return `${count} event${count === 1 ? "" : "s"}`;
+  }, [selectedEvents.length]);
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Agenda</Text>
-      <Text style={styles.subtitle}>Plan your schedule and track upcoming events.</Text>
+      <View style={styles.header}>
+        <Text style={styles.title}>Agenda</Text>
+        <Text style={styles.subtitle}>Plan your schedule and track upcoming events.</Text>
+      </View>
       <View style={styles.calendar}>
         <Agenda
           selected={selectedDate}
@@ -52,22 +58,44 @@ export default function AgendaScreen() {
           renderEmptyData={() => null}
         />
       </View>
-      <Text style={styles.listTitle}>Events on {selectedDate}</Text>
-      <FlatList
-        data={selectedEvents}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Pressable
-            onPress={() => router.push(ROUTES.agendaDetail(item.id))}
-            style={styles.eventRow}
-          >
-            <Text style={styles.eventTitle}>{item.title}</Text>
-            <Text style={styles.eventMeta}>
-              {item.startTime} - {item.endTime} • {item.location}
-            </Text>
-          </Pressable>
-        )}
-      />
+      <View style={styles.agendaSection}>
+        <View style={styles.agendaHeader}>
+          <Text style={styles.agendaHeaderTitle}>Events on {selectedDate}</Text>
+          <Text style={styles.agendaHeaderCount}>{eventCountLabel}</Text>
+        </View>
+        <FlatList
+          data={selectedEvents}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.agendaList}
+          renderItem={({ item }) => (
+            <Pressable
+              onPress={() => router.push(ROUTES.agendaDetail(item.id))}
+              style={styles.agendaItem}
+            >
+              <Text style={styles.agendaTitle}>{item.title}</Text>
+              <Text style={styles.agendaLocation}>{item.location}</Text>
+              <Text style={styles.agendaTime}>
+                {item.startTime} - {item.endTime}
+              </Text>
+              <View style={styles.agendaTimes}>
+                <View style={styles.agendaTimeRow}>
+                  <Text style={styles.agendaTimeLabel}>Start</Text>
+                  <Text style={styles.agendaTimeValue}>{item.startTime}</Text>
+                </View>
+                <View style={styles.agendaTimeRow}>
+                  <Text style={styles.agendaTimeLabel}>End</Text>
+                  <Text style={styles.agendaTimeValue}>{item.endTime}</Text>
+                </View>
+              </View>
+            </Pressable>
+          )}
+          ListEmptyComponent={
+            <View style={styles.agendaEmpty}>
+              <Text style={styles.agendaEmptyText}>No events scheduled for this day.</Text>
+            </View>
+          }
+        />
+      </View>
     </SafeAreaView>
   );
 }

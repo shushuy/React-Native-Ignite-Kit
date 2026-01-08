@@ -23,13 +23,27 @@ export default function AgendaDetailScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{event.title}</Text>
-      <Text style={styles.subtitle}>
-        {event.date} • {event.startTime} - {event.endTime}
-      </Text>
       <View style={styles.card}>
-        <Text style={styles.label}>Location</Text>
-        <Text style={styles.value}>{event.location}</Text>
+        <View style={styles.row}>
+          <Text style={styles.label}>Title</Text>
+          <Text style={styles.value}>{event.title}</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Date</Text>
+          <Text style={styles.value}>{event.date}</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Time</Text>
+          <Text style={styles.value}>
+            {event.startTime} - {event.endTime}
+          </Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Location</Text>
+          <Text style={styles.value}>{event.location}</Text>
+        </View>
+      </View>
+      <View style={styles.card}>
         <Text style={styles.label}>Description</Text>
         <Text style={styles.value}>{event.description}</Text>
       </View>

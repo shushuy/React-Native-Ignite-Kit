@@ -7,46 +7,108 @@ export const createAgendaScreenStyles = (colors: ThemeColors) =>
     container: {
       flex: 1,
       backgroundColor: colors.background,
-      paddingHorizontal: 20,
-      paddingBottom: 20,
+      paddingTop: 16,
+      paddingBottom: 16,
+      gap: 8,
+    },
+    header: {
+      paddingHorizontal: 16,
+      gap: 4,
     },
     title: {
-      fontSize: 24,
+      fontSize: 22,
       fontWeight: "700",
       color: colors.text,
-      marginBottom: 4,
     },
     subtitle: {
       fontSize: 14,
       color: colors.mutedText,
-      marginBottom: 16,
     },
     calendar: {
+      marginHorizontal: 16,
       borderRadius: 12,
       overflow: "hidden",
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: colors.card,
     },
-    listTitle: {
-      marginTop: 20,
-      marginBottom: 10,
+    agendaSection: {
+      marginTop: 12,
+      paddingHorizontal: 16,
+      gap: 8,
+    },
+    agendaHeader: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
+    agendaHeaderTitle: {
       fontSize: 16,
       fontWeight: "600",
       color: colors.text,
     },
-    eventRow: {
-      paddingVertical: 12,
-      borderBottomWidth: 1,
-      borderBottomColor: colors.border,
+    agendaHeaderCount: {
+      fontSize: 12,
+      fontWeight: "600",
+      textTransform: "uppercase",
+      letterSpacing: 0.6,
+      color: colors.mutedText,
     },
-    eventTitle: {
+    agendaList: {
+      gap: 8,
+      paddingBottom: 12,
+    },
+    agendaItem: {
+      padding: 12,
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.card,
+      position: "relative",
+      overflow: "hidden",
+      gap: 4,
+    },
+    agendaTime: {
+      fontSize: 13,
+      fontWeight: "600",
+      color: colors.text,
+    },
+    agendaTimes: {
+      gap: 4,
+    },
+    agendaTimeRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 6,
+    },
+    agendaTimeLabel: {
+      fontSize: 12,
+      fontWeight: "600",
+      textTransform: "uppercase",
+      color: colors.mutedText,
+    },
+    agendaTimeValue: {
+      fontSize: 13,
+      fontWeight: "600",
+      color: colors.text,
+    },
+    agendaTitle: {
       fontSize: 15,
       fontWeight: "600",
       color: colors.text,
-      marginBottom: 4,
     },
-    eventMeta: {
+    agendaLocation: {
+      fontSize: 13,
+      color: colors.mutedText,
+    },
+    agendaEmpty: {
+      padding: 12,
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.background,
+    },
+    agendaEmptyText: {
       fontSize: 13,
       color: colors.mutedText,
     },
