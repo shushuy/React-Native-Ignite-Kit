@@ -13,7 +13,9 @@ import {
 type PermissionStatus = Notifications.PermissionStatus;
 
 export const useNotifications = () => {
-  const [permissionStatus, setPermissionStatus] = useState<PermissionStatus>("undetermined");
+  const [permissionStatus, setPermissionStatus] = useState<PermissionStatus>(
+    Notifications.PermissionStatus.UNDETERMINED
+  );
   const [isSchedulePending, setIsSchedulePending] = useState(false);
   const [isSendPending, setIsSendPending] = useState(false);
   const scheduleTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -25,6 +27,8 @@ export const useNotifications = () => {
         shouldShowAlert: true,
         shouldPlaySound: NOTIFICATION_DEFAULT_SOUND,
         shouldSetBadge: false,
+        shouldShowBanner: true,
+        shouldShowList: true,
       }),
     });
 
