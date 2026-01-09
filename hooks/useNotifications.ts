@@ -6,6 +6,7 @@ import {
   NOTIFICATION_DEFAULT_SOUND,
   NOTIFICATION_SCHEDULE_DELAY_SECONDS,
   NOTIFICATION_TEST_BODY,
+  NOTIFICATION_TEST_CHANNEL_ID,
   NOTIFICATION_TEST_TITLE,
 } from "@/constants/notifications";
 
@@ -67,6 +68,7 @@ export const useNotifications = () => {
         title: NOTIFICATION_TEST_TITLE,
         body: NOTIFICATION_TEST_BODY,
         sound: NOTIFICATION_DEFAULT_SOUND,
+        ...(Platform.OS === "android" ? { channelId: NOTIFICATION_TEST_CHANNEL_ID } : null),
       },
       trigger: null,
     });
@@ -83,8 +85,12 @@ export const useNotifications = () => {
         title: NOTIFICATION_TEST_TITLE,
         body: NOTIFICATION_TEST_BODY,
         sound: NOTIFICATION_DEFAULT_SOUND,
+        ...(Platform.OS === "android" ? { channelId: NOTIFICATION_TEST_CHANNEL_ID } : null),
       },
-      trigger: { seconds: NOTIFICATION_SCHEDULE_DELAY_SECONDS },
+      trigger: {
+        type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
+        seconds: NOTIFICATION_SCHEDULE_DELAY_SECONDS,
+      },
     });
   }, [ensurePermission]);
 

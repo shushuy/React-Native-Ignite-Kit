@@ -157,3 +157,8 @@ Outcome: constants/agenda.ts, mock/events.json, utils/generateAgendaEvents.ts, u
 Title: Add local notifications demo
 Summary: Added a notifications hook, profile UI controls, and README notes for local notification scaffolding.
 Outcome: hooks/useNotifications.ts, constants/notifications.ts, constants/profile.ts, app/(tabs)/profile/index.tsx, styles/ProfileScreen.styles.ts, README.md, planning/history.md
+
+2026-01-09 10:58 AM
+Title: Fix scheduled notification trigger
+Summary: Added explicit time interval trigger type and Android channel wiring for test notifications.
+Outcome: hooks/useNotifications.ts, constants/notifications.ts, planning/history.md
