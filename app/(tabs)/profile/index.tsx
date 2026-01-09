@@ -15,8 +15,13 @@ export default function ProfileScreen() {
   const styles = useMemo(() => createProfileScreenStyles(colors), [colors]);
   const { logout } = useAuth();
   const router = useRouter();
-  const { permissionStatus, requestPermissions, sendInstantTestNotification, scheduleTestNotification } =
-    useNotifications();
+  const {
+    permissionStatus,
+    requestPermissions,
+    sendInstantTestNotification,
+    scheduleTestNotification,
+    isSchedulePending,
+  } = useNotifications();
   const permissionLabel =
     PROFILE_PERMISSION_LABELS[permissionStatus] ?? PROFILE_PERMISSION_LABELS.undetermined;
 
@@ -48,6 +53,7 @@ export default function ProfileScreen() {
             <Button
               label={PROFILE_COPY.scheduleTestNotification}
               onPress={scheduleTestNotification}
+              disabled={isSchedulePending}
             />
           </View>
         </View>

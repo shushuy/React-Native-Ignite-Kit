@@ -162,3 +162,8 @@ Outcome: hooks/useNotifications.ts, constants/notifications.ts, constants/profil
 Title: Fix scheduled notification trigger
 Summary: Added explicit time interval trigger type and Android channel wiring for test notifications.
 Outcome: hooks/useNotifications.ts, constants/notifications.ts, planning/history.md
+
+2026-01-09 11:04 AM
+Title: Throttle scheduled notification button
+Summary: Added a 5-second cooldown on scheduled notifications to prevent repeat taps.
+Outcome: hooks/useNotifications.ts, app/(tabs)/profile/index.tsx, planning/history.md
