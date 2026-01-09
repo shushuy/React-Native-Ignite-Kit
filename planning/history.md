@@ -167,3 +167,8 @@ Outcome: hooks/useNotifications.ts, constants/notifications.ts, planning/history
 Title: Throttle scheduled notification button
 Summary: Added a 5-second cooldown on scheduled notifications to prevent repeat taps.
 Outcome: hooks/useNotifications.ts, app/(tabs)/profile/index.tsx, planning/history.md
+
+2026-01-09 11:05 AM
+Title: Throttle instant notification button
+Summary: Added a 5-second cooldown to prevent repeat taps on instant notifications.
+Outcome: hooks/useNotifications.ts, app/(tabs)/profile/index.tsx, planning/history.md

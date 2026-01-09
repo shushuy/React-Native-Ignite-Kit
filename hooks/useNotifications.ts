@@ -15,7 +15,9 @@ type PermissionStatus = Notifications.PermissionStatus;
 export const useNotifications = () => {
   const [permissionStatus, setPermissionStatus] = useState<PermissionStatus>("undetermined");
   const [isSchedulePending, setIsSchedulePending] = useState(false);
+  const [isSendPending, setIsSendPending] = useState(false);
   const scheduleTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const sendTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     Notifications.setNotificationHandler({
@@ -38,6 +40,9 @@ export const useNotifications = () => {
     return () => {
       if (scheduleTimeoutRef.current) {
         clearTimeout(scheduleTimeoutRef.current);
+      }
+      if (sendTimeoutRef.current) {
+        clearTimeout(sendTimeoutRef.current);
       }
     };
   }, []);
@@ -68,21 +73,37 @@ export const useNotifications = () => {
   }, [permissionStatus, requestPermissions]);
 
   const sendInstantTestNotification = useCallback(async () => {
+    if (isSendPending) {
+      return;
+    }
     const status = await ensurePermission();
     if (status !== "granted") {
       return;
     }
 
-    await Notifications.scheduleNotificationAsync({
-      content: {
-        title: NOTIFICATION_TEST_TITLE,
-        body: NOTIFICATION_TEST_BODY,
-        sound: NOTIFICATION_DEFAULT_SOUND,
-        ...(Platform.OS === "android" ? { channelId: NOTIFICATION_TEST_CHANNEL_ID } : null),
-      },
-      trigger: null,
-    });
-  }, [ensurePermission]);
+    setIsSendPending(true);
+    try {
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: NOTIFICATION_TEST_TITLE,
+          body: NOTIFICATION_TEST_BODY,
+          sound: NOTIFICATION_DEFAULT_SOUND,
+          ...(Platform.OS === "android" ? { channelId: NOTIFICATION_TEST_CHANNEL_ID } : null),
+        },
+        trigger: null,
+      });
+
+      if (sendTimeoutRef.current) {
+        clearTimeout(sendTimeoutRef.current);
+      }
+      sendTimeoutRef.current = setTimeout(() => {
+        setIsSendPending(false);
+      }, NOTIFICATION_SCHEDULE_DELAY_SECONDS * 1000);
+    } catch (error) {
+      setIsSendPending(false);
+      throw error;
+    }
+  }, [ensurePermission, isSendPending]);
 
   const scheduleTestNotification = useCallback(async () => {
     if (isSchedulePending) {
@@ -126,5 +147,6 @@ export const useNotifications = () => {
     sendInstantTestNotification,
     scheduleTestNotification,
     isSchedulePending,
+    isSendPending,
   };
 };

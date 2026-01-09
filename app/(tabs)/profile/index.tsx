@@ -21,6 +21,7 @@ export default function ProfileScreen() {
     sendInstantTestNotification,
     scheduleTestNotification,
     isSchedulePending,
+    isSendPending,
   } = useNotifications();
   const permissionLabel =
     PROFILE_PERMISSION_LABELS[permissionStatus] ?? PROFILE_PERMISSION_LABELS.undetermined;
@@ -47,7 +48,11 @@ export default function ProfileScreen() {
             </View>
           ) : null}
           <View style={styles.buttonRow}>
-            <Button label={PROFILE_COPY.sendTestNotification} onPress={sendInstantTestNotification} />
+            <Button
+              label={PROFILE_COPY.sendTestNotification}
+              onPress={sendInstantTestNotification}
+              disabled={isSendPending}
+            />
           </View>
           <View style={styles.buttonRow}>
             <Button
