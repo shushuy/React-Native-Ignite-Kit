@@ -1,10 +1,20 @@
-# Progress Plan
+# Daily restart prompt: "Before coding, read planning/progress-plan.md for source-of-truth context and follow its steps."
 
-## Planning Context (Read This First)
-- See `planning/codex-config.md` for project rules and architecture constraints.
-- See `planning/history.md` for what already shipped and which files changed.
+# React Native Ignite Kit Progress Plan
 
-## Folder Structure (End State)
+This repo is an Expo Router + TypeScript template for repeatable mobile builds with a portfolio-ready architecture. Use this file as the overview, then drill into `planning/steps/*.md` for the detailed task lists.
+
+## Source-of-truth context
+- Rules and preferences: `planning/codex-config.md`
+- Work log: `planning/history.md`
+- Prompt/request log: `planning/prompt-history.md`
+
+## App scope snapshot
+- Splash gate: checks token/credentials, routes to Auth or Authed Tabs, re-checks on app foreground.
+- Auth stack: Login + Forgot Password (nested view in auth stack).
+- Authed tabs (4): Chat, Map, Agenda, Profile (mocked user, plan/cost, logout, dev reset button).
+
+## Folder structure (end state)
 ```
 /app/(auth)
 /app/(tabs)
@@ -17,187 +27,41 @@
 /planning
 ```
 
-## Phase 0 — Repo Setup
-- [ ] Step 0.1
-  - Goal: Clone the repo and enter the project directory.
-  - Commands:
-    ```bash
-    git clone git@github.com:shushuy/React-Native-Ignite-Kit.git
-    cd React-Native-Ignite-Kit
-    ```
-  - Files to create/change: None
-  - Expected result: Local repo ready for setup.
+## Steps overview
+Each step is a shippable slice that unlocks the next. Detailed checklists live in the step files.
 
-- [ ] Step 0.2
-  - Goal: Initialize an Expo Router + TypeScript project in-place.
-  - Commands:
-    ```bash
-    npx create-expo-app . --template
-    ```
-  - Files to create/change: Expo starter files under /app and config files.
-  - Expected result: Base Expo Router Tabs + TypeScript template created.
+1) **Repo + Infra Setup** (`planning/steps/1_repo_setup.md`)
+- Clone the repo, scaffold Expo Router + TypeScript, install dependencies, set up tooling, and document the base template.
 
-- [ ] Step 0.3
-  - Goal: Install Codex CLI for project automation.
-  - Commands:
-    ```bash
-    npm install -g @openai/codex
-    ```
-  - Files to create/change: None
-  - Expected result: Codex CLI available globally.
+2) **Routing & Splash Gate** (`planning/steps/2_routing_splash_gate.md`)
+- Root stack with splash gate, SecureStore adapter, and AppState refresh.
 
-- [ ] Step 0.4
-  - Goal: Install dependencies used by the repo.
-  - Commands:
-    ```bash
-    npx expo install expo-router react-native-safe-area-context react-native-screens
-    npx expo install expo-secure-store
-    npx expo install react-native-maps
-    npm install react-native-calendars
-    npx expo install expo-notifications
-    npm install nativewind
-    npm install --save-dev tailwindcss
-    npx tailwindcss init
-    npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-prettier
-    npm install --save-dev @typescript-eslint/eslint-plugin @typescript-eslint/parser
-    npm install --save-dev jest jest-expo
-    npm install --save-dev @testing-library/react-native @testing-library/jest-native
-    npm install --save-dev react-test-renderer
-    ```
-  - Files to create/change: package.json, package-lock.json, tailwind.config.js
-  - Expected result: All dependencies installed and Tailwind config created.
+3) **Auth Stack** (`planning/steps/3_auth_stack.md`)
+- (auth) route group, login + forgot password flows, token set + routing.
 
-- [ ] Step 0.5
-  - Goal: Set up ESLint and Prettier configuration.
-  - Commands: None
-  - Files to create/change: eslint config file, prettier config file.
-  - Expected result: Linting and formatting configured.
+4) **Tabs + Nested Stacks** (`planning/steps/4_tabs_nested_stacks.md`)
+- (tabs) group with Chat, Map, Agenda, Profile tabs and nested stack layouts.
 
-- [ ] Step 0.6
-  - Goal: Add environment files for local development.
-  - Commands: None
-  - Files to create/change: .env, .env.example
-  - Expected result: Local env file present with example template.
+5) **Chat Feature** (`planning/steps/5_chat_feature.md`)
+- Chat list, chat detail, and image viewer routes powered by mock data + assets.
 
-- [ ] Step 0.7
-  - Goal: Update ignore rules for Expo, macOS, and drafts.
-  - Commands: None
-  - Files to create/change: .gitignore
-  - Expected result: .env, BLOG_POST.md, and Expo/macOS artifacts ignored.
+6) **Map Feature** (`planning/steps/6_map_feature.md`)
+- Map markers with detail screens using mocked locations and local images.
 
-- [ ] Step 0.8
-  - Goal: Create planning docs for Codex execution.
-  - Commands: None
-  - Files to create/change: /planning/codex-config.md, /planning/history.md, /planning/progress-plan.md
-  - Expected result: Planning docs available for repeatable guidance.
+7) **Agenda Feature** (`planning/steps/7_agenda_feature.md`)
+- Calendar/agenda list and event detail screens with mocked events.
 
-- [ ] Step 0.9
-  - Goal: Create README with screenshot placeholders.
-  - Commands: None
-  - Files to create/change: README.md
-  - Expected result: README includes install/run steps and image placeholders.
+8) **Mock Data + Assets** (`planning/steps/8_mock_data_assets.md`)
+- Create mock datasets, typed loaders, and asset key mapping helpers.
 
-- [ ] Step 0.10
-  - Goal: Commit and push to GitHub.
-  - Commands:
-    ```bash
-    git remote -v
-    git remote set-url origin git@github.com:shushuy/React-Native-Ignite-Kit.git
-    git branch -M main
-    git add .
-    git commit -m "chore: initial commit"
-    git push -u origin main
-    ```
-  - Files to create/change: None
-  - Expected result: Remote repo updated on main.
-  - Note: Use force push only when intentionally overwriting remote history.
-    ```bash
-    git push -u origin main --force
-    ```
+9) **Theming + Layout Polish** (`planning/steps/9_theming_polish.md`)
+- ThemeProvider + system colors, shared styles, safe-area layout polish, and consistent headers.
 
-## Phase 1 — Routing & Splash Gate
-- [ ] Step 1.1
-  - Goal: Define root stack and route groups.
-  - Commands: None
-  - Files to create/change: /app/_layout.tsx
-  - Expected result: Root stack with splash gate and (auth)/(tabs) groups.
+10) **Profile + Notifications** (`planning/steps/10_profile_notifications.md`)
+- Profile screen content, test notification hooks, and throttled buttons.
 
-- [ ] Step 1.2
-  - Goal: Implement token gate hook and storage adapter.
-  - Commands: None
-  - Files to create/change: /hooks/useAuthGate.ts, /services/token-storage.ts
-  - Expected result: Token checks route to auth or tabs; SecureStore used with comments for AsyncStorage swap.
-
-- [ ] Step 1.3
-  - Goal: Re-check token on app foreground.
-  - Commands: None
-  - Files to create/change: /hooks/useAuthGate.ts or /services/token-storage.ts
-  - Expected result: AppState listener refreshes auth when returning to foreground.
-
-## Phase 2 — Auth Stack
-- [ ] Step 2.1
-  - Goal: Create (auth) group layout.
-  - Commands: None
-  - Files to create/change: /app/(auth)/_layout.tsx
-  - Expected result: Auth stack routes are grouped and isolated.
-
-- [ ] Step 2.2
-  - Goal: Build Login and Forgot Password screens.
-  - Commands: None
-  - Files to create/change: /app/(auth)/login.tsx, /app/(auth)/forgot-password.tsx
-  - Expected result: Fake login always succeeds, sets token, routes to tabs; forgot password nested in auth stack.
-
-## Phase 3 — Tabs + Nested Stacks
-- [ ] Step 3.1
-  - Goal: Create (tabs) group and four tab stacks.
-  - Commands: None
-  - Files to create/change: /app/(tabs)/_layout.tsx and per-tab stack layouts
-  - Expected result: Chat, Map, Agenda, Profile tabs with nested stack routes (no modals).
-
-## Phase 4 — Chat Feature
-- [ ] Step 4.1
-  - Goal: Render chats list with FlatList and mock data.
-  - Commands: None
-  - Files to create/change: /app/(tabs)/chat/index.tsx, /mock/chats.json
-  - Expected result: List of chats navigates to detail screen.
-
-- [ ] Step 4.2
-  - Goal: Build chat detail with messages and input.
-  - Commands: None
-  - Files to create/change: /app/(tabs)/chat/[id].tsx, /mock/messages.json
-  - Expected result: Messages render and input appends to list.
-
-- [ ] Step 4.3
-  - Goal: Add image viewer route for message images.
-  - Commands: None
-  - Files to create/change: /app/(tabs)/chat/image-viewer.tsx, /assets/images
-  - Expected result: Tapping image opens full-screen viewer.
-
-## Phase 5 — Map Feature
-- [ ] Step 5.1
-  - Goal: Render map and markers from mock data.
-  - Commands: None
-  - Files to create/change: /app/(tabs)/map/index.tsx, /mock/locations.json
-  - Expected result: Map shows markers and handles taps.
-
-- [ ] Step 5.2
-  - Goal: Create business detail route.
-  - Commands: None
-  - Files to create/change: /app/(tabs)/map/[id].tsx, /assets/images
-  - Expected result: Marker tap navigates to detail with local image and data.
-
-## Phase 6 — Agenda Feature
-- [ ] Step 6.1
-  - Goal: Render calendar with mock events.
-  - Commands: None
-  - Files to create/change: /app/(tabs)/agenda/index.tsx, /mock/events.json
-  - Expected result: Calendar displays event data.
-
-- [ ] Step 6.2
-  - Goal: Create event detail route.
-  - Commands: None
-  - Files to create/change: /app/(tabs)/agenda/[id].tsx
-  - Expected result: Selecting event navigates to detail screen.
+11) **Quality + CI** (`planning/steps/11_quality_ci.md`)
+- ESLint/Prettier, Jest, EAS config, and GitHub Actions CI wiring.
 
 ## Phase 7 — Profile Feature
 - [ ] Step 7.1
