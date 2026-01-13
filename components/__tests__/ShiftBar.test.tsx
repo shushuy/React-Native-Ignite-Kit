@@ -1,19 +1,26 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import renderer, { act } from "react-test-renderer";
 
 import { ThemeProvider } from "../../context/ThemeContext";
 import { ShiftBar } from "../ShiftBar";
 
 describe("ShiftBar", () => {
   it("renders correctly", () => {
-    const tree = renderer
-      .create(
+    let tree: renderer.ReactTestRendererJSON | renderer.ReactTestRendererJSON[] | null = null;
+    let instance: renderer.ReactTestRenderer | null = null;
+
+    act(() => {
+      instance = renderer.create(
         <ThemeProvider>
           <ShiftBar startTime="09:00" endTime="17:00" />
         </ThemeProvider>
-      )
-      .toJSON();
+      );
+      tree = instance.toJSON();
+    });
 
     expect(tree).toMatchSnapshot();
+    act(() => {
+      instance?.unmount();
+    });
   });
 });

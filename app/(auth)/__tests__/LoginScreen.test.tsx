@@ -4,20 +4,20 @@ import { act, fireEvent, render } from "@testing-library/react-native";
 import { ROUTES } from "@/constants/routes";
 import LoginScreen from "@/app/(auth)/login";
 
-const replaceMock = jest.fn();
-const pushMock = jest.fn();
-const loginMock = jest.fn().mockResolvedValue(undefined);
+const mockReplace = jest.fn();
+const mockPush = jest.fn();
+const mockLogin = jest.fn().mockResolvedValue(undefined);
 
 jest.mock("expo-router", () => ({
   useRouter: () => ({
-    replace: replaceMock,
-    push: pushMock,
+    replace: mockReplace,
+    push: mockPush,
   }),
 }));
 
 jest.mock("@/context/AuthContext", () => ({
   useAuth: () => ({
-    login: loginMock,
+    login: mockLogin,
   }),
 }));
 
@@ -37,9 +37,9 @@ jest.mock("@/hooks/useTheme", () => ({
 
 describe("LoginScreen", () => {
   beforeEach(() => {
-    replaceMock.mockClear();
-    pushMock.mockClear();
-    loginMock.mockClear();
+    mockReplace.mockClear();
+    mockPush.mockClear();
+    mockLogin.mockClear();
   });
 
   it("renders inputs and triggers login", async () => {
@@ -52,7 +52,7 @@ describe("LoginScreen", () => {
       fireEvent.press(getByText("Login"));
     });
 
-    expect(loginMock).toHaveBeenCalledTimes(1);
-    expect(replaceMock).toHaveBeenCalledWith(ROUTES.tabsChat);
+    expect(mockLogin).toHaveBeenCalledTimes(1);
+    expect(mockReplace).toHaveBeenCalledWith(ROUTES.tabsChat);
   });
 });
