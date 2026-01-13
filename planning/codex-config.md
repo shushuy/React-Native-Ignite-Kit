@@ -3,7 +3,7 @@
 ## Project identity
 - Name: react-native-ignite-kit
 - Purpose: Expo Router + TS template built with Codex for replicable mobile app builds.
-- Goal: Portfolio-ready architecture.
+- Goal: Portfolio-ready architecture and a documented agent-assisted build story for the blog post.
 
 ## App states
 - Splash gate: checks token/credentials, routes to Auth or Authed Tabs, re-checks token when app returns from background (AppState).
@@ -45,6 +45,7 @@
 - Only output created/changed files.
 - Always update /planning/history.md after meaningful work.
 - Use comments for future devs (but don't over-comment).
+- At the end of any big step code change, add the commit message to simplify the push.
 
 ## Codex coding rules
 - Use const files to avoid magic strings.
@@ -59,6 +60,7 @@
 - `planning/steps/*.md` contains step-by-step task lists.
 - `planning/history.md` shows what already changed and why.
 - `planning/prompt-history.md` records past prompts/requests.
+- The planning structure is designed to be copied or used as a cloneable template for new projects.
 
 ## Required context prompt
 When starting any new task, always load these files first:

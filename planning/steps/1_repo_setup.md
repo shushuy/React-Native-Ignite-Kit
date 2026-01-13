@@ -7,6 +7,7 @@
   cd React-Native-Ignite-Kit
   ```
 - Expected result: Local repo ready for setup.
+- Blog note: this is the recommended starting point for readers who want to clone and immediately build on the template.
 
 2) **Initialize Expo Router + TypeScript**
 - Command:

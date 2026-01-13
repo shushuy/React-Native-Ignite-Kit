@@ -2,12 +2,13 @@
 
 # React Native Ignite Kit Progress Plan
 
-This repo is an Expo Router + TypeScript template for repeatable mobile builds with a portfolio-ready architecture. Use this file as the overview, then drill into `planning/steps/*.md` for the detailed task lists.
+This repo is an Expo Router + TypeScript template for repeatable mobile builds with a portfolio-ready architecture. It also serves as the foundation for a blog post explaining how the repo was created with agent help, plus a reusable planning structure that can be copied or cloned to jumpstart new projects. Use this file as the overview, then drill into `planning/steps/*.md` for the detailed task lists.
 
 ## Source-of-truth context
 - Rules and preferences: `planning/codex-config.md`
 - Work log: `planning/history.md`
 - Prompt/request log: `planning/prompt-history.md`
+- Blog intent: use this plan to explain the build story and reuse the template for new projects.
 
 ## App scope snapshot
 - Splash gate: checks token/credentials, routes to Auth or Authed Tabs, re-checks on app foreground.

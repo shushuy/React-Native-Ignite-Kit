@@ -14,3 +14,8 @@
 - Configure EAS and CI workflows (lint + test + typecheck on PR/push to main).
 - Files to create/change: `eas.json`, `.github/workflows/*`.
 - Expected result: CI runs reliably and builds are ready for deployment.
+
+4) **Document template usage for the blog post**
+- Capture how to reuse this repo: clone the template, copy the planning structure, and follow the steps.
+- Files to create/change: `BLOG_POST.md`, `README.md`, `planning/progress-plan.md` (if needed).
+- Expected result: Blog readers can recreate the repo or reuse the planning system for new projects.
