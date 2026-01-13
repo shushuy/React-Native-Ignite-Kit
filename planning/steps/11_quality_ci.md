@@ -10,12 +10,19 @@
 - Files to create/change: Jest config/setup, `components/__tests__/*`, `utils/*.test.ts`.
 - Expected result: Unit tests cover core utilities and components.
 
-3) **Add EAS config and GitHub Actions**
+3) **Add basic unit testing (Auth + login)**
+- Configure jest-expo preset, add `jest.setup.ts`, and add CI-friendly scripts.
+- Mock SecureStore for deterministic token storage tests.
+- Create tests for AuthContext, token storage adapter, and the Login screen.
+- Files to create/change: `jest.config.js`, `jest.setup.ts`, `__mocks__/expo-secure-store.ts`, `context/__tests__/AuthContext.test.tsx`, `services/__tests__/tokenStorage.test.ts`, `app/(auth)/__tests__/LoginScreen.test.tsx`, `package.json`, `README.md`.
+- Expected result: Auth and login tests pass locally and in CI.
+
+4) **Add EAS config and GitHub Actions**
 - Configure EAS and CI workflows (lint + test + typecheck on PR/push to main).
 - Files to create/change: `eas.json`, `.github/workflows/*`.
 - Expected result: CI runs reliably and builds are ready for deployment.
 
-4) **Document template usage for the blog post**
+5) **Document template usage for the blog post**
 - Capture how to reuse this repo: clone the template, copy the planning structure, and follow the steps.
 - Files to create/change: `BLOG_POST.md`, `README.md`, `planning/progress-plan.md` (if needed).
 - Expected result: Blog readers can recreate the repo or reuse the planning system for new projects.

@@ -1,5 +1,6 @@
 # React Native Ignite Kit Work Log
 
+- 2026-01-13 03:05 PM — Added Jest setup, SecureStore mock, auth/token/login tests, and testing scripts/docs. Outcome: jest.config.js, jest.setup.ts, __mocks__/expo-secure-store.ts, context/__tests__/AuthContext.test.tsx, services/__tests__/tokenStorage.test.ts, app/(auth)/__tests__/LoginScreen.test.tsx, package.json, README.md, planning/steps/11_quality_ci.md, planning/history.md.
 - 2026-01-13 02:51 PM — Documented blog intent and reuse guidance across the planning files. Outcome: planning/progress-plan.md, planning/codex-config.md, planning/steps/1_repo_setup.md, planning/steps/11_quality_ci.md, planning/history.md.
 - 2026-01-13 02:10 PM — Restructured planning docs to match step-based format, added step templates, and removed MOBILE_PLAN.
 - 2026-01-09 11:05 AM — Throttle instant notification button. Outcome: hooks/useNotifications.ts, app/(tabs)/profile/index.tsx, planning/history.md.

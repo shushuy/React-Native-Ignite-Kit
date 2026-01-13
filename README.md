@@ -28,3 +28,7 @@ Calendar shows marked dates; selecting a day lists events, and tapping one opens
 
 ## Notifications (Local Demo)
 The Profile tab includes a local notifications demo using `expo-notifications`. Remote push requires extra setup (including device tokens and server-side delivery) and a physical device.
+
+## Testing
+- `npm test`
+- `npm run test:watch`
