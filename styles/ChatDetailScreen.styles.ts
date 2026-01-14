@@ -8,9 +8,12 @@ export const createChatDetailScreenStyles = (colors: ThemeColors) =>
       flex: 1,
       backgroundColor: colors.background,
     },
+    list: {
+      flex: 1,
+    },
     listContent: {
       padding: 20,
-      paddingBottom: 120,
+      paddingBottom: 24,
     },
     messageCard: {
       padding: 12,
@@ -42,10 +45,6 @@ export const createChatDetailScreenStyles = (colors: ThemeColors) =>
       marginBottom: 8,
     },
     composer: {
-      position: "absolute",
-      left: 0,
-      right: 0,
-      bottom: 0,
       padding: 16,
       borderTopWidth: 1,
       borderTopColor: colors.border,
@@ -53,7 +52,7 @@ export const createChatDetailScreenStyles = (colors: ThemeColors) =>
     },
     composerRow: {
       flexDirection: "row",
-      alignItems: "center",
+      alignItems: "flex-end",
     },
     input: {
       flex: 1,
@@ -65,6 +64,9 @@ export const createChatDetailScreenStyles = (colors: ThemeColors) =>
       backgroundColor: colors.background,
       color: colors.text,
       marginRight: 10,
+      minHeight: 44,
+      maxHeight: 120,
+      textAlignVertical: "top",
     },
     sendButton: {
       paddingHorizontal: 16,
