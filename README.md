@@ -32,3 +32,9 @@ The Profile tab includes a local notifications demo using `expo-notifications`. 
 ## Testing
 - `npm test`
 - `npm run test:watch`
+
+## Linting & Formatting
+- `npm run lint`
+- `npm run lint:fix`
+- `npm run format`
+- `npm run typecheck`
