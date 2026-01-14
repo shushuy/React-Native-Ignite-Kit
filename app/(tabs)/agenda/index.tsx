@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { Agenda, type AgendaEntry, type AgendaSchedule, type DateData } from "react-native-calendars";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
+import { type Href, useRouter } from "expo-router";
 
 import { ShiftBar } from "@/components/ShiftBar";
 import { useTheme } from "@/hooks/useTheme";
@@ -44,6 +44,7 @@ export default function AgendaScreen() {
           endTime: event.endTime,
           location: event.location,
           description: event.description,
+          height: 88,
         };
         acc[event.date] = [...(acc[event.date] ?? []), item];
         return acc;
@@ -71,24 +72,28 @@ export default function AgendaScreen() {
   const handleDayPress = useCallback((day: DateData) => setSelectedDate(day.dateString), []);
 
   const renderItem = useCallback(
-    (item: AgendaItem) => (
+    (item: AgendaEntry) => {
+      const agendaItem = item as AgendaItem;
+
+      return (
       <Pressable
-        onPress={() => router.push(ROUTES.agendaDetail(item.id))}
+        onPress={() => router.push(ROUTES.agendaDetail(agendaItem.id) as Href)}
         style={styles.agendaItem}
       >
-        <ShiftBar startTime={item.startTime} endTime={item.endTime} />
+        <ShiftBar startTime={agendaItem.startTime} endTime={agendaItem.endTime} />
         <View style={styles.agendaRow}>
           <Text style={styles.agendaTime}>
-            {item.startTime} - {item.endTime}
+            {agendaItem.startTime} - {agendaItem.endTime}
           </Text>
           <View style={styles.agendaChip}>
-            <Text style={styles.agendaChipText}>{getInitials(item.name)}</Text>
+            <Text style={styles.agendaChipText}>{getInitials(agendaItem.name)}</Text>
           </View>
         </View>
-        <Text style={styles.agendaTitle}>{item.name}</Text>
-        <Text style={styles.agendaLocation}>{item.location}</Text>
+        <Text style={styles.agendaTitle}>{agendaItem.name}</Text>
+        <Text style={styles.agendaLocation}>{agendaItem.location}</Text>
       </Pressable>
-    ),
+      );
+    },
     [router, styles]
   );
 

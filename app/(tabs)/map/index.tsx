@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Callout, Marker } from "react-native-maps";
 import MapView from "react-native-maps";
-import { useRouter } from "expo-router";
+import { type Href, useRouter } from "expo-router";
 
 import { loadLocations } from "@/services/mock";
 import { useTheme } from "@/hooks/useTheme";
@@ -31,7 +31,7 @@ export default function MapScreen() {
             coordinate={{ latitude: location.latitude, longitude: location.longitude }}
             title={location.name}
           >
-            <Callout onPress={() => router.push(ROUTES.mapDetail(location.id))}>
+            <Callout onPress={() => router.push(ROUTES.mapDetail(location.id) as Href)}>
               <View>
                 <Text>{location.name}</Text>
               </View>

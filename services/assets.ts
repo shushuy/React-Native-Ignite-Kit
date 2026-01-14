@@ -8,9 +8,6 @@ import {
   type ImageKey,
 } from "../constants/asset-keys";
 
-const fallbackAvatar = require("../assets/images/icon.png");
-const fallbackImage = require("../assets/images/splash-icon.png");
-
 // TODO: Replace placeholder assets in /assets/avatars and /assets/images with real brand imagery.
 
 const avatarSourceMap: Record<AvatarKey, ImageSourcePropType> = {

@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from "react";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
+import { type Href, useRouter } from "expo-router";
 
 import Button from "@/components/Button";
 import { PROFILE_COPY, PROFILE_PERMISSION_LABELS } from "@/constants/profile";
@@ -28,8 +28,12 @@ export default function ProfileScreen() {
 
   const handleLogout = useCallback(async () => {
     await logout();
-    router.replace("/(auth)/login");
+    router.replace("/(auth)/login" as Href);
   }, [logout, router]);
+
+  const handleRequestPermissions = useCallback(async () => {
+    await requestPermissions();
+  }, [requestPermissions]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,7 +48,7 @@ export default function ProfileScreen() {
         <View style={styles.buttonStack}>
           {permissionStatus !== "granted" ? (
             <View style={styles.buttonRow}>
-              <Button label={PROFILE_COPY.enableNotifications} onPress={requestPermissions} />
+              <Button label={PROFILE_COPY.enableNotifications} onPress={handleRequestPermissions} />
             </View>
           ) : null}
           <View style={styles.buttonRow}>

@@ -1,6 +1,6 @@
 import type { AgendaEntry } from "react-native-calendars";
 
-type AgendaRow = AgendaEntry & {
+type AgendaRow = Partial<AgendaEntry> & {
   id?: string;
   startTime?: string;
   endTime?: string;

@@ -1,3 +1,4 @@
+import { type Href, useLocalSearchParams, useNavigation, useRouter } from "expo-router";
 import { useCallback, useLayoutEffect, useMemo, useState } from "react";
 import {
   FlatList,
@@ -9,15 +10,14 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { useLocalSearchParams, useNavigation, useRouter } from "expo-router";
 
+import { SELF_SENDER_NAME } from "@/constants/chat";
+import { ROUTES } from "@/constants/routes";
+import { useTheme } from "@/hooks/useTheme";
 import { getImageSource } from "@/services/assets";
 import { loadChats, loadMessages } from "@/services/mock";
-import { useTheme } from "@/hooks/useTheme";
 import { createChatDetailScreenStyles } from "@/styles/ChatDetailScreen.styles";
 import { formatTimestamp } from "@/utils/formatTimestamp";
-import { ROUTES } from "@/constants/routes";
-import { SELF_SENDER_NAME } from "@/constants/chat";
 
 type MessageItem = ReturnType<typeof loadMessages>[number];
 
@@ -63,8 +63,8 @@ export default function ChatDetailScreen() {
   }, [chatId, inputValue]);
 
   const handleImagePress = useCallback(
-    (imageKey: string) => {
-      router.push(ROUTES.chatImage(imageKey));
+    (imageKey: string|undefined) => {
+      imageKey && router.push(ROUTES.chatImage(imageKey) as Href);
     },
     [router]
   );

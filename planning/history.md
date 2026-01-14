@@ -1,5 +1,6 @@
 # React Native Ignite Kit Work Log
 
+- 2026-01-14 01:08 PM — Added ESLint/Prettier config, lint/format scripts, and typecheck fixes for routing and agenda typing. Outcome: .eslintrc.cjs, .prettierrc, .prettierignore, package.json, README.md, tsconfig.json, utils/getShiftBarPosition.ts, utils/agendaRowHasChanged.ts, services/assets.ts, app/(tabs)/agenda/index.tsx, app/(tabs)/chat/index.tsx, app/(tabs)/chat/[chatId].tsx, app/(tabs)/map/index.tsx, app/(tabs)/profile/index.tsx, planning/history.md.
 - 2026-01-14 01:00 PM — Centralized self-sender name constant for chat alignment logic. Outcome: constants/chat.ts, app/(tabs)/chat/[chatId].tsx, planning/history.md.
 - 2026-01-14 12:59 PM — Aligned chat bubbles to content width with left/right alignment for self vs others. Outcome: app/(tabs)/chat/[chatId].tsx, styles/ChatDetailScreen.styles.ts, planning/history.md.
 - 2026-01-14 12:54 PM — Fixed chat detail layout (composer overlap, header title, multiline input). Outcome: app/(tabs)/chat/_layout.tsx, app/(tabs)/chat/[chatId].tsx, styles/ChatDetailScreen.styles.ts, planning/history.md.

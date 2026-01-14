@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from "react";
 import { FlatList, Image, Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
+import { type Href, useRouter } from "expo-router";
 
 import { getAvatarSource } from "@/services/assets";
 import { loadChats } from "@/services/mock";
@@ -19,7 +19,7 @@ export default function ChatScreen() {
 
   const handlePress = useCallback(
     (chatId: string) => {
-      router.push(ROUTES.chatDetail(chatId));
+      router.push(ROUTES.chatDetail(chatId) as Href);
     },
     [router]
   );
