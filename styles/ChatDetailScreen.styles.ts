@@ -15,18 +15,43 @@ export const createChatDetailScreenStyles = (colors: ThemeColors) =>
       padding: 20,
       paddingBottom: 24,
     },
+    messageRow: {
+      width: "100%",
+      flexDirection: "row",
+      marginBottom: 12,
+    },
+    messageRowSelf: {
+      justifyContent: "flex-end",
+    },
+    messageRowOther: {
+      justifyContent: "flex-start",
+    },
     messageCard: {
       padding: 12,
       borderRadius: 12,
       backgroundColor: colors.card,
       borderWidth: 1,
       borderColor: colors.border,
-      marginBottom: 12,
+      maxWidth: "80%",
+      alignSelf: "flex-start",
+    },
+    messageCardSelf: {
+      alignSelf: "flex-end",
+      borderColor: colors.primary,
+    },
+    messageCardOther: {
+      alignSelf: "flex-start",
     },
     sender: {
       fontSize: 12,
       color: colors.mutedText,
       marginBottom: 6,
+    },
+    senderSelf: {
+      textAlign: "right",
+    },
+    senderOther: {
+      textAlign: "left",
     },
     messageText: {
       fontSize: 15,
@@ -37,6 +62,12 @@ export const createChatDetailScreenStyles = (colors: ThemeColors) =>
       fontSize: 11,
       color: colors.mutedText,
       textAlign: "right",
+    },
+    timestampSelf: {
+      textAlign: "right",
+    },
+    timestampOther: {
+      textAlign: "left",
     },
     messageImage: {
       width: "100%",

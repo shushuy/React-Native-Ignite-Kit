@@ -17,6 +17,7 @@ import { useTheme } from "@/hooks/useTheme";
 import { createChatDetailScreenStyles } from "@/styles/ChatDetailScreen.styles";
 import { formatTimestamp } from "@/utils/formatTimestamp";
 import { ROUTES } from "@/constants/routes";
+import { SELF_SENDER_NAME } from "@/constants/chat";
 
 type MessageItem = ReturnType<typeof loadMessages>[number];
 
@@ -52,7 +53,7 @@ export default function ChatDetailScreen() {
     const nextMessage: MessageItem = {
       id: `msg-${Date.now()}`,
       chatId: chatIdValue ?? "unknown",
-      senderName: "You",
+      senderName: SELF_SENDER_NAME,
       text: trimmed,
       timestamp: new Date().toISOString(),
     };
@@ -69,18 +70,28 @@ export default function ChatDetailScreen() {
   );
 
   const renderItem = useCallback(
-    ({ item }: { item: MessageItem }) => (
-      <View style={styles.messageCard}>
-        <Text style={styles.sender}>{item.senderName}</Text>
-        <Text style={styles.messageText}>{item.text}</Text>
-        {item.imageKey ? (
-          <Pressable onPress={() => handleImagePress(item.imageKey)}>
-            <Image source={getImageSource(item.imageKey)} style={styles.messageImage} />
-          </Pressable>
-        ) : null}
-        <Text style={styles.timestamp}>{formatTimestamp(item.timestamp)}</Text>
-      </View>
-    ),
+    ({ item }: { item: MessageItem }) => {
+      const isSelf = item.senderName === SELF_SENDER_NAME;
+
+      return (
+        <View style={[styles.messageRow, isSelf ? styles.messageRowSelf : styles.messageRowOther]}>
+          <View style={[styles.messageCard, isSelf ? styles.messageCardSelf : styles.messageCardOther]}>
+            <Text style={[styles.sender, isSelf ? styles.senderSelf : styles.senderOther]}>
+              {item.senderName}
+            </Text>
+            <Text style={styles.messageText}>{item.text}</Text>
+            {item.imageKey ? (
+              <Pressable onPress={() => handleImagePress(item.imageKey)}>
+                <Image source={getImageSource(item.imageKey)} style={styles.messageImage} />
+              </Pressable>
+            ) : null}
+            <Text style={[styles.timestamp, isSelf ? styles.timestampSelf : styles.timestampOther]}>
+              {formatTimestamp(item.timestamp)}
+            </Text>
+          </View>
+        </View>
+      );
+    },
     [handleImagePress, styles]
   );
 

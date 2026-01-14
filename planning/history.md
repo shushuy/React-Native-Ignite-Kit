@@ -1,5 +1,7 @@
 # React Native Ignite Kit Work Log
 
+- 2026-01-14 01:00 PM — Centralized self-sender name constant for chat alignment logic. Outcome: constants/chat.ts, app/(tabs)/chat/[chatId].tsx, planning/history.md.
+- 2026-01-14 12:59 PM — Aligned chat bubbles to content width with left/right alignment for self vs others. Outcome: app/(tabs)/chat/[chatId].tsx, styles/ChatDetailScreen.styles.ts, planning/history.md.
 - 2026-01-14 12:54 PM — Fixed chat detail layout (composer overlap, header title, multiline input). Outcome: app/(tabs)/chat/_layout.tsx, app/(tabs)/chat/[chatId].tsx, styles/ChatDetailScreen.styles.ts, planning/history.md.
 - 2026-01-13 04:48 PM — Fixed Jest failures by isolating legacy tests, stabilizing time-based test, and wrapping renderer in act for clean teardown. Outcome: jest.config.js, utils/timeToString.test.ts, app/(auth)/__tests__/LoginScreen.test.tsx, components/__tests__/ShiftBar.test.tsx, components/__tests__/StyledText-test.js, planning/history.md.
 - 2026-01-13 03:05 PM — Added Jest setup, SecureStore mock, auth/token/login tests, and testing scripts/docs. Outcome: jest.config.js, jest.setup.ts, __mocks__/expo-secure-store.ts, context/__tests__/AuthContext.test.tsx, services/__tests__/tokenStorage.test.ts, app/(auth)/__tests__/LoginScreen.test.tsx, package.json, README.md, planning/steps/11_quality_ci.md, planning/history.md.
