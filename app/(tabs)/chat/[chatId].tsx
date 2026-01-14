@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useLayoutEffect, useMemo, useState } from "react";
 import {
   FlatList,
   Image,
@@ -9,10 +9,10 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useNavigation, useRouter } from "expo-router";
 
 import { getImageSource } from "@/services/assets";
-import { loadMessages } from "@/services/mock";
+import { loadChats, loadMessages } from "@/services/mock";
 import { useTheme } from "@/hooks/useTheme";
 import { createChatDetailScreenStyles } from "@/styles/ChatDetailScreen.styles";
 import { formatTimestamp } from "@/utils/formatTimestamp";
@@ -23,13 +23,25 @@ type MessageItem = ReturnType<typeof loadMessages>[number];
 export default function ChatDetailScreen() {
   const { chatId } = useLocalSearchParams<{ chatId: string | string[] }>();
   const router = useRouter();
+  const navigation = useNavigation();
   const { colors } = useTheme();
   const styles = useMemo(() => createChatDetailScreenStyles(colors), [colors]);
   const [inputValue, setInputValue] = useState("");
   const chatIdValue = Array.isArray(chatId) ? chatId[0] : chatId;
+  const chatTitle = useMemo(() => {
+    if (!chatIdValue) {
+      return "Chat";
+    }
+    const chat = loadChats().find((item) => item.id === chatIdValue);
+    return chat?.title ?? "Chat";
+  }, [chatIdValue]);
   const [messages, setMessages] = useState(() =>
     loadMessages().filter((message) => message.chatId === chatIdValue)
   );
+
+  useLayoutEffect(() => {
+    navigation.setOptions({ title: chatTitle });
+  }, [chatTitle, navigation]);
 
   const handleSend = useCallback(() => {
     const trimmed = inputValue.trim();
@@ -83,6 +95,7 @@ export default function ChatDetailScreen() {
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         contentContainerStyle={styles.listContent}
+        style={styles.list}
         inverted
       />
       <View style={styles.composer}>
@@ -93,6 +106,8 @@ export default function ChatDetailScreen() {
             onChangeText={setInputValue}
             placeholder="Type a message"
             placeholderTextColor={colors.mutedText}
+            multiline
+            textAlignVertical="top"
           />
           <Pressable onPress={handleSend} style={styles.sendButton}>
             <Text style={styles.sendButtonText}>Send</Text>
