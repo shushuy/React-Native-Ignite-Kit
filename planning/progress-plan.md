@@ -6,7 +6,7 @@ This repo is an Expo Router + TypeScript template for repeatable mobile builds w
 
 ## Source-of-truth context
 - Rules and preferences: `planning/codex-config.md`
-- Work log: `planning/history.md`
+- Change log: `planning/change-log.md`
 - Prompt/request log: `planning/prompt-history.md`
 - Blog intent: use this plan to explain the build story and reuse the template for new projects.
 

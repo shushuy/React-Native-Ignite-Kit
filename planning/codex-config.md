@@ -43,7 +43,7 @@
 - Avoid huge diffs in one step.
 - Show updated file tree.
 - Only output created/changed files.
-- Always update /planning/history.md after meaningful work.
+- Always update /planning/change-log.md after meaningful work.
 - Use comments for future devs (but don't over-comment).
 - At the end of any big step code change, add the commit message to simplify the push.
 
@@ -58,16 +58,17 @@
 ## Planning context (read this first)
 - `planning/progress-plan.md` is the source-of-truth build plan.
 - `planning/steps/*.md` contains step-by-step task lists.
-- `planning/history.md` shows what already changed and why.
+- `planning/change-log.md` shows what already changed and why.
 - `planning/prompt-history.md` records past prompts/requests.
 - The planning structure is designed to be copied or used as a cloneable template for new projects.
+- When updating `planning/prompt-history.md`, append the relevant `planning/steps/*.md` file(s) in parentheses at the end of the entry. If no matching step exists, create it first.
 
 ## Required context prompt
 When starting any new task, always load these files first:
 1) `planning/progress-plan.md`
 2) `planning/codex-config.md`
-3) `planning/history.md`
+3) `planning/change-log.md`
 4) `planning/prompt-history.md`
 
 Prompt template:
-"Read `planning/progress-plan.md`, then `planning/codex-config.md`, `planning/history.md`, and `planning/prompt-history.md` for full context and rules. After that, [your task]."
+"Read `planning/progress-plan.md`, then `planning/codex-config.md`, `planning/change-log.md`, and `planning/prompt-history.md` for full context and rules. After that, [your task]."

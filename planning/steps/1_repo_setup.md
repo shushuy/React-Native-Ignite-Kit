@@ -57,7 +57,7 @@
 - Expected result: `.env`, `BLOG_POST.md`, and Expo/macOS artifacts ignored.
 
 8) **Create planning docs**
-- Files to create/change: `planning/codex-config.md`, `planning/history.md`, `planning/progress-plan.md`, `planning/steps/*.md`.
+- Files to create/change: `planning/codex-config.md`, `planning/change-log.md`, `planning/progress-plan.md`, `planning/steps/*.md`.
 - Expected result: Planning docs available for repeatable guidance.
 
 9) **Create README with screenshot placeholders**
