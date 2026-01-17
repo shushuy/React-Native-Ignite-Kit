@@ -38,3 +38,12 @@ The Profile tab includes a local notifications demo using `expo-notifications`. 
 - `npm run lint:fix`
 - `npm run format`
 - `npm run typecheck`
+
+## EAS Build & Deploy
+- Install EAS CLI: `npm install -g eas-cli`
+- Authenticate: `eas login`
+- Initialize: `eas init`
+- Preview builds:
+  - `eas build --profile preview --platform ios`
+  - `eas build --profile preview --platform android`
+- Notes: production builds require Apple/Google store setup; preview builds are great for sharing with stakeholders.
