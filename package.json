@@ -12,8 +12,8 @@
     "test:watch": "jest --watch",
     "test:ci": "jest --ci --runInBand",
     "typecheck": "tsc --noEmit",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts,.tsx,.js",
-    "lint:fix": "ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts,.tsx,.js --fix",
+    "lint": "eslint . --ext .ts,.tsx,.js",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js --fix",
     "format": "prettier --write ."
   },
   "dependencies": {

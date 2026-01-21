@@ -1,5 +1,8 @@
 # React Native Ignite Kit Change Log
 
+- 2026-01-20 08:20 PM — Adjusted flat ESLint config globals to restore node/jest/runtime envs after migration. Outcome: eslint.config.js, planning/change-log.md.
+- 2026-01-20 08:17 PM — Migrated ESLint config to flat config to remove deprecation warning and updated lint scripts. Outcome: eslint.config.js, package.json, planning/change-log.md, .eslintrc.cjs.
+- 2026-01-20 08:16 PM — Fixed chat image navigation handler to satisfy lint rule against unused expressions. Outcome: app/(tabs)/chat/[chatId].tsx, planning/change-log.md.
 - 2026-01-20 07:27 PM — Added GitHub Actions CI workflow to run lint, tests, and typecheck on pushes and pull requests to main. Outcome: .github/workflows/ci.yml, README.md, planning/change-log.md, planning/history.md.
 
 - 2026-01-16 09:29 PM — Added EAS build profiles, env-driven app config identifiers, and README EAS build notes. Outcome: eas.json, app.config.ts, README.md, planning/prompt-history.md, planning/change-log.md.

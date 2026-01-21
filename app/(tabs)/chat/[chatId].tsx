@@ -63,8 +63,11 @@ export default function ChatDetailScreen() {
   }, [chatId, inputValue]);
 
   const handleImagePress = useCallback(
-    (imageKey: string|undefined) => {
-      imageKey && router.push(ROUTES.chatImage(imageKey) as Href);
+    (imageKey: string | undefined) => {
+      if (!imageKey) {
+        return;
+      }
+      router.push(ROUTES.chatImage(imageKey) as Href);
     },
     [router]
   );
