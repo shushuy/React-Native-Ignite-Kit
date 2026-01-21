@@ -1,5 +1,7 @@
 # React Native Ignite Kit Change Log
 
+- 2026-01-20 09:21 PM — Removed unused component/style files to trim template clutter. Outcome: components/useClientOnlyValue.ts, components/useClientOnlyValue.web.ts, styles/ChatScreen.styles.ts, styles/TabOneScreen.styles.ts, styles/TabTwoScreen.styles.ts, planning/steps/12_maintenance_cleanup.md, planning/prompt-history.md, planning/change-log.md.
+- 2026-01-20 08:59 PM — Removed unused ts-expect-error in ExternalLink to unblock typecheck. Outcome: components/ExternalLink.tsx, planning/change-log.md.
 - 2026-01-20 08:20 PM — Adjusted flat ESLint config globals to restore node/jest/runtime envs after migration. Outcome: eslint.config.js, planning/change-log.md.
 - 2026-01-20 08:17 PM — Migrated ESLint config to flat config to remove deprecation warning and updated lint scripts. Outcome: eslint.config.js, package.json, planning/change-log.md, .eslintrc.cjs.
 - 2026-01-20 08:16 PM — Fixed chat image navigation handler to satisfy lint rule against unused expressions. Outcome: app/(tabs)/chat/[chatId].tsx, planning/change-log.md.

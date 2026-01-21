@@ -17,3 +17,4 @@
 - 2026-01-13 05:10 PM — Request: implement Profile tab fully (mock user JSON details + logout + dev-only Reset App button). (planning/steps/10_profile_notifications.md)
 - 2026-01-13 05:25 PM — Request: add local notifications demo (expo-notifications hook + “Send Test Notification” button in Profile) and README notes. (planning/steps/10_profile_notifications.md)
 - 2026-01-14 01:08 PM — Request: finalize ESLint + Prettier setup with scripts, lint/typecheck fixes, and README instructions. (planning/steps/11_quality_ci.md)
+- 2026-01-20 09:21 PM — Request: remove unused component/style files from the repo. (planning/steps/12_maintenance_cleanup.md)
