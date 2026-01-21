@@ -1,5 +1,7 @@
 # React Native Ignite Kit Change Log
 
+- 2026-01-20 07:27 PM — Added GitHub Actions CI workflow to run lint, tests, and typecheck on pushes and pull requests to main. Outcome: .github/workflows/ci.yml, README.md, planning/change-log.md, planning/history.md.
+
 - 2026-01-16 09:29 PM — Added EAS build profiles, env-driven app config identifiers, and README EAS build notes. Outcome: eas.json, app.config.ts, README.md, planning/prompt-history.md, planning/change-log.md.
 - 2026-01-14 02:01 PM — Renamed planning/history.md to planning/change-log.md for clarity. Outcome: planning/change-log.md, planning/codex-config.md, planning/progress-plan.md, planning/prompt-history.md, planning/steps/1_repo_setup.md.
 - 2026-01-14 01:58 PM — Added rule to link prompt history entries to matching planning steps (create step file if missing). Outcome: planning/codex-config.md, planning/change-log.md.

@@ -33,6 +33,9 @@ The Profile tab includes a local notifications demo using `expo-notifications`. 
 - `npm test`
 - `npm run test:watch`
 
+## CI
+Runs on pushes to `main` and pull requests targeting `main`. Executes lint, `test:ci`, and typecheck.
+
 ## Linting & Formatting
 - `npm run lint`
 - `npm run lint:fix`
