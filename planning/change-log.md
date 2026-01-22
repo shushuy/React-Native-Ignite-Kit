@@ -1,5 +1,7 @@
 # React Native Ignite Kit Change Log
 
+- 2026-01-22 12:58 PM — Renamed screenshots for consistent ordering. Outcome: docs/screenshots/01-chat.png, docs/screenshots/02-map.png, docs/screenshots/03-agenda.png, docs/screenshots/04-profile.png, planning/change-log.md.
+- 2026-01-22 12:56 PM — Final release prep docs and planning consistency updates. Outcome: README.md, planning/progress-plan.md, planning/codex-config.md, planning/history.md, BLOG_POST.md, docs/screenshots/.gitkeep, planning/change-log.md.
 - 2026-01-22 12:51 PM — Added app demo GIF to README. Outcome: README.md, planning/change-log.md.
 - 2026-01-22 12:48 PM — Hardened auth gate, added empty states, and improved UI safety/README troubleshooting. Outcome: app/index.tsx, hooks/useAuthGate.ts, context/AuthContext.tsx, app/(tabs)/chat/index.tsx, app/(tabs)/chat/[chatId].tsx, app/(tabs)/map/index.tsx, app/(tabs)/agenda/index.tsx, app/(tabs)/profile/index.tsx, styles/ChatListScreen.styles.ts, styles/ChatDetailScreen.styles.ts, styles/MapScreen.styles.ts, styles/AgendaScreen.styles.ts, styles/ProfileScreen.styles.ts, services/assets.ts, README.md, planning/change-log.md.
 - 2026-01-22 12:29 PM — Added padding to logo image for app icon spacing. Outcome: assets/images/logo.png, planning/change-log.md.

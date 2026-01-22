@@ -12,7 +12,7 @@
   - Chat (FlatList chats/messages, nested chat detail + input, image viewer route)
   - Map (react-native-maps markers, business detail nested route)
   - Agenda (react-native-calendars, event detail nested route)
-  - Profile (mocked user from JSON, plan/cost, logout, dev reset button)
+  - Profile (mocked user from JSON, plan/cost, logout)
 
 ## Architecture preferences
 - Expo Router with route groups: (auth) and (tabs).

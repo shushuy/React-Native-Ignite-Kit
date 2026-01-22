@@ -5,6 +5,20 @@ Blog Post Draft: `BLOG_POST.md` is gitignored and used for drafting.
 ## App Demo
 ![App demo](assets/readme/appDemo.gif)
 
+## Project Structure
+```
+/app/(auth)
+/app/(tabs)
+/components
+/context
+/hooks
+/services
+/mock
+/assets
+/planning
+/docs/screenshots
+```
+
 ## Mock Data
 Mock JSON lives in `/mock`. Asset keys in the JSON map to local images via `/services/assets.ts`, with fallbacks to template placeholders until real assets are added.
 
@@ -35,12 +49,25 @@ Calendar shows marked dates; selecting a day lists events, and tapping one opens
 ## Notifications (Local Demo)
 The Profile tab includes a local notifications demo using `expo-notifications`. Remote push requires extra setup (including device tokens and server-side delivery) and a physical device.
 
+## Reuse This Template
+1) Clone or fork the repo.
+2) Rename the app by updating `app.config.ts` (name/slug/scheme) or set the `EXPO_PUBLIC_*` env vars.
+3) Update bundle identifiers: `EXPO_PUBLIC_IOS_BUNDLE_IDENTIFIER` and `EXPO_PUBLIC_ANDROID_PACKAGE`.
+4) Replace mock data in `/mock` and swap assets in `/assets`.
+5) Replace tabs/features by editing routes in `/app/(tabs)`.
+6) Run checks: `npm run lint`, `npm run test`, `npm run typecheck`.
+7) Build with EAS:
+   - `eas login`
+   - `eas init`
+   - `eas build --profile preview --platform ios`
+   - `eas build --profile preview --platform android`
+
 ## Testing
 - `npm test`
 - `npm run test:watch`
 
 ## CI
-Runs on pushes to `main` and pull requests targeting `main`. Executes lint, `test:ci`, and typecheck.
+Runs on pushes to `main` and pull requests targeting `main`. Executes lint and `test:ci` (typecheck is available but commented out).
 
 ## Troubleshooting
 - Clear Metro cache: `npx expo start -c`

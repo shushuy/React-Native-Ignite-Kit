@@ -26,6 +26,7 @@ This repo is an Expo Router + TypeScript template for repeatable mobile builds w
 /mock
 /assets
 /planning
+/docs/screenshots
 ```
 
 ## Steps overview
@@ -64,6 +65,9 @@ Each step is a shippable slice that unlocks the next. Detailed checklists live i
 11) **Quality + CI** (`planning/steps/11_quality_ci.md`)
 - ESLint/Prettier, Jest, EAS config, and GitHub Actions CI wiring.
 
+12) **Maintenance + Cleanup** (`planning/steps/12_maintenance_cleanup.md`)
+- Remove unused files, tighten configs, and keep the template lean.
+
 ## Phase 7 — Profile Feature
 - [ ] Step 7.1
   - Goal: Load user data from local JSON.
@@ -72,10 +76,10 @@ Each step is a shippable slice that unlocks the next. Detailed checklists live i
   - Expected result: Profile shows name, email, plan, cost/month, avatar.
 
 - [ ] Step 7.2
-  - Goal: Implement logout and dev reset.
+  - Goal: Implement logout.
   - Commands: None
   - Files to create/change: /context/AuthContext.tsx, /app/(tabs)/profile/index.tsx
-  - Expected result: Logout clears token and returns to auth; dev-only reset button shows confirm alert.
+  - Expected result: Logout clears token and returns to auth.
 
 ## Phase 8 — Polish + Reusability
 - [ ] Step 8.1

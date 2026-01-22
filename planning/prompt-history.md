@@ -1,5 +1,7 @@
 # Prompt History
 
+- 2026-01-22 12:58 PM — Request: rename the screenshots in docs/screenshots for clear ordering. (planning/steps/12_maintenance_cleanup.md)
+- 2026-01-22 12:56 PM — Request: final portfolio/release prep (README polish, scripts check, planning consistency, blog checklist). (planning/steps/12_maintenance_cleanup.md)
 - 2026-01-22 12:51 PM — Request: add the app demo GIF to README. (planning/steps/1_repo_setup.md)
 - 2026-01-22 12:48 PM — Request: harden auth gate, add defensive empty states, improve asset fallbacks, and add README troubleshooting. (planning/steps/9_theming_polish.md)
 - 2026-01-22 12:25 PM — Request: update iOS/Android app icon to use assets/images/logo.png. (planning/steps/1_repo_setup.md)
