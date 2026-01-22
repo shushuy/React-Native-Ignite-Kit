@@ -11,7 +11,7 @@ export const createMapScreenStyles = (colors: ThemeColors) =>
     header: {
       paddingHorizontal: 20,
       paddingTop: 20,
-      paddingBottom: 12,
+      paddingBottom: 16,
     },
     title: {
       fontSize: 24,
@@ -22,6 +22,7 @@ export const createMapScreenStyles = (colors: ThemeColors) =>
     subtitle: {
       fontSize: 14,
       color: colors.mutedText,
+      lineHeight: 20,
     },
     map: {
       flex: 1,

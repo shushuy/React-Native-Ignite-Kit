@@ -1,5 +1,6 @@
 # Prompt History
 
+- 2026-01-22 11:19 AM — Request: polish tabs by removing temporary logout scaffolding, aligning headers, tightening spacing, and documenting navigation stacks. (planning/steps/9_theming_polish.md)
 - 2026-01-22 11:09 AM — Request: make the CI typecheck step optional by commenting it out. (planning/steps/11_quality_ci.md)
 - 2026-01-16 09:29 PM — Request: add EAS build setup with eas.json profiles, app identifiers in app config, and README EAS instructions. (planning/steps/11_quality_ci.md)
 - 2026-01-13 01:30 PM — Request: create `BLOG_POST.md` (gitignored) with full “from scratch” instructions (Codex install, npm installs, run commands, push/force-push), update `.gitignore`, and add README note. (planning/steps/1_repo_setup.md)

@@ -1,5 +1,6 @@
 # React Native Ignite Kit Change Log
 
+- 2026-01-22 11:19 AM — Polished tab spacing and navigation notes. Outcome: styles/ChatListScreen.styles.ts, styles/MapScreen.styles.ts, styles/AgendaScreen.styles.ts, styles/ProfileScreen.styles.ts, README.md, planning/change-log.md.
 - 2026-01-22 11:09 AM — Commented out typecheck step in CI workflow to make it optional. Outcome: .github/workflows/ci.yml, planning/change-log.md.
 - 2026-01-20 09:21 PM — Removed unused component/style files to trim template clutter. Outcome: components/useClientOnlyValue.ts, components/useClientOnlyValue.web.ts, styles/ChatScreen.styles.ts, styles/TabOneScreen.styles.ts, styles/TabTwoScreen.styles.ts, planning/steps/12_maintenance_cleanup.md, planning/prompt-history.md, planning/change-log.md.
 - 2026-01-20 08:59 PM — Removed unused ts-expect-error in ExternalLink to unblock typecheck. Outcome: components/ExternalLink.tsx, planning/change-log.md.

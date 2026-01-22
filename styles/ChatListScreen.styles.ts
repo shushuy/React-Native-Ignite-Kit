@@ -21,6 +21,7 @@ export const createChatListScreenStyles = (colors: ThemeColors) =>
     subtitle: {
       fontSize: 14,
       color: colors.mutedText,
+      lineHeight: 20,
     },
     listContent: {
       paddingBottom: 24,
@@ -50,5 +51,6 @@ export const createChatListScreenStyles = (colors: ThemeColors) =>
     rowSubtitle: {
       fontSize: 13,
       color: colors.mutedText,
+      lineHeight: 18,
     },
   });

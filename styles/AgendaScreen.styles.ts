@@ -7,25 +7,26 @@ export const createAgendaScreenStyles = (colors: ThemeColors) =>
     container: {
       flex: 1,
       backgroundColor: colors.background,
-      paddingTop: 16,
+      paddingTop: 20,
       paddingBottom: 16,
-      gap: 8,
+      gap: 12,
     },
     header: {
-      paddingHorizontal: 16,
+      paddingHorizontal: 20,
       gap: 4,
     },
     title: {
-      fontSize: 22,
+      fontSize: 24,
       fontWeight: "700",
       color: colors.text,
     },
     subtitle: {
       fontSize: 14,
       color: colors.mutedText,
+      lineHeight: 20,
     },
     agendaItem: {
-      padding: 12,
+      padding: 14,
       borderRadius: 10,
       borderWidth: 1,
       borderColor: colors.border,

@@ -7,7 +7,7 @@ export const createProfileScreenStyles = (colors: ThemeColors) =>
     container: {
       flex: 1,
       backgroundColor: colors.background,
-      padding: 24,
+      padding: 20,
     },
     title: {
       fontSize: 24,
@@ -18,6 +18,7 @@ export const createProfileScreenStyles = (colors: ThemeColors) =>
     description: {
       fontSize: 14,
       color: colors.mutedText,
+      lineHeight: 20,
       marginBottom: 24,
     },
     section: {
