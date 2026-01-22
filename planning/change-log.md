@@ -1,5 +1,7 @@
 # React Native Ignite Kit Change Log
 
+- 2026-01-22 12:29 PM — Added padding to logo image for app icon spacing. Outcome: assets/images/logo.png, planning/change-log.md.
+- 2026-01-22 12:25 PM — Set app icon/logo to use assets/images/logo.png for iOS and Android. Outcome: app.config.ts, app.json, planning/change-log.md.
 - 2026-01-22 11:44 AM — Added image generation prompt template for chat demo assets. Outcome: planning/image-generation-prompts.md, planning/change-log.md.
 - 2026-01-22 11:42 AM — Replaced chat image assets with new screenshots. Outcome: assets/images/img-1.png, assets/images/img-2.png, assets/images/img-3.png, assets/images/img-4.png, planning/change-log.md.
 - 2026-01-22 11:40 AM — Replaced avatar assets with new images and wired a fourth avatar for the profile. Outcome: assets/avatars/avatar-1.png, assets/avatars/avatar-2.png, assets/avatars/avatar-3.png, assets/avatars/avatar-4.png, constants/asset-keys.ts, services/assets.ts, mock/user.json, planning/change-log.md.

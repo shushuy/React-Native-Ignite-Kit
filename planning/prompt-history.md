@@ -1,5 +1,6 @@
 # Prompt History
 
+- 2026-01-22 12:25 PM — Request: update iOS/Android app icon to use assets/images/logo.png. (planning/steps/1_repo_setup.md)
 - 2026-01-22 11:44 AM — Request: store the chat image generation prompt template in the planning folder. (planning/steps/8_mock_data_assets.md)
 - 2026-01-22 11:42 AM — Request: replace chat images with new screenshots. (planning/steps/8_mock_data_assets.md)
 - 2026-01-22 11:40 AM — Request: move new avatar images into /assets/avatars and update references. (planning/steps/8_mock_data_assets.md)
