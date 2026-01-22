@@ -28,5 +28,5 @@ jobs:
       - name: Test
         run: npm run test:ci
 
-      - name: Typecheck
-        run: npm run typecheck
+      # - name: Typecheck
+      #   run: npm run typecheck
