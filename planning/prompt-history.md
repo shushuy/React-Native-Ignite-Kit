@@ -1,5 +1,7 @@
 # Prompt History
 
+- 2026-01-22 11:42 AM — Request: replace chat images with new screenshots. (planning/steps/8_mock_data_assets.md)
+- 2026-01-22 11:40 AM — Request: move new avatar images into /assets/avatars and update references. (planning/steps/8_mock_data_assets.md)
 - 2026-01-22 11:19 AM — Request: polish tabs by removing temporary logout scaffolding, aligning headers, tightening spacing, and documenting navigation stacks. (planning/steps/9_theming_polish.md)
 - 2026-01-22 11:09 AM — Request: make the CI typecheck step optional by commenting it out. (planning/steps/11_quality_ci.md)
 - 2026-01-16 09:29 PM — Request: add EAS build setup with eas.json profiles, app identifiers in app config, and README EAS instructions. (planning/steps/11_quality_ci.md)

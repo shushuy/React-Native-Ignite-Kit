@@ -14,6 +14,7 @@ const avatarSourceMap: Record<AvatarKey, ImageSourcePropType> = {
   "avatar-1": require("../assets/avatars/avatar-1.png"),
   "avatar-2": require("../assets/avatars/avatar-2.png"),
   "avatar-3": require("../assets/avatars/avatar-3.png"),
+  "avatar-4": require("../assets/avatars/avatar-4.png"),
 };
 
 const imageSourceMap: Record<ImageKey, ImageSourcePropType> = {
