@@ -27,4 +27,22 @@ export const createMapScreenStyles = (colors: ThemeColors) =>
     map: {
       flex: 1,
     },
+    emptyState: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      paddingHorizontal: 24,
+    },
+    emptyTitle: {
+      fontSize: 16,
+      fontWeight: "600",
+      color: colors.text,
+      marginBottom: 6,
+    },
+    emptyText: {
+      fontSize: 13,
+      color: colors.mutedText,
+      textAlign: "center",
+      lineHeight: 18,
+    },
   });

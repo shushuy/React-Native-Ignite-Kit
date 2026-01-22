@@ -98,10 +98,20 @@ export default function ChatDetailScreen() {
     [handleImagePress, styles]
   );
 
+  const renderEmpty = useCallback(
+    () => (
+      <View style={styles.emptyState}>
+        <Text style={styles.emptyTitle}>No messages yet</Text>
+        <Text style={styles.emptyText}>Start the conversation to see messages here.</Text>
+      </View>
+    ),
+    [styles]
+  );
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
-      behavior={Platform.OS === "ios" ? "padding" : undefined}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
       keyboardVerticalOffset={Platform.OS === "ios" ? 80 : 0}
     >
       <FlatList
@@ -111,6 +121,7 @@ export default function ChatDetailScreen() {
         contentContainerStyle={styles.listContent}
         style={styles.list}
         inverted
+        ListEmptyComponent={renderEmpty}
       />
       <View style={styles.composer}>
         <View style={styles.composerRow}>

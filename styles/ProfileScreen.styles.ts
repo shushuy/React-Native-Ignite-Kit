@@ -21,12 +21,58 @@ export const createProfileScreenStyles = (colors: ThemeColors) =>
       lineHeight: 20,
       marginBottom: 24,
     },
+    profileCard: {
+      flexDirection: "row",
+      alignItems: "center",
+      padding: 16,
+      borderRadius: 12,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.card,
+      marginBottom: 16,
+    },
+    avatar: {
+      width: 56,
+      height: 56,
+      borderRadius: 28,
+      marginRight: 12,
+    },
+    profileInfo: {
+      flex: 1,
+    },
+    profileName: {
+      fontSize: 16,
+      fontWeight: "600",
+      color: colors.text,
+      marginBottom: 4,
+    },
+    profileEmail: {
+      fontSize: 13,
+      color: colors.mutedText,
+    },
+    planRow: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginBottom: 8,
+      paddingHorizontal: 4,
+    },
+    planLabel: {
+      fontSize: 13,
+      color: colors.mutedText,
+    },
+    planValue: {
+      fontSize: 13,
+      fontWeight: "600",
+      color: colors.text,
+    },
     section: {
       borderRadius: 12,
       borderWidth: 1,
       borderColor: colors.border,
       backgroundColor: colors.card,
       padding: 16,
+      marginTop: 8,
       marginBottom: 24,
     },
     sectionTitle: {

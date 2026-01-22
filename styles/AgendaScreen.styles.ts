@@ -25,6 +25,20 @@ export const createAgendaScreenStyles = (colors: ThemeColors) =>
       color: colors.mutedText,
       lineHeight: 20,
     },
+    emptyNotice: {
+      marginHorizontal: 20,
+      padding: 12,
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: colors.border,
+      backgroundColor: colors.card,
+    },
+    emptyNoticeText: {
+      fontSize: 13,
+      color: colors.mutedText,
+      textAlign: "center",
+      lineHeight: 18,
+    },
     agendaItem: {
       padding: 14,
       borderRadius: 10,

@@ -6,8 +6,13 @@ export const useAuthGate = () => {
   const { refreshTokenState } = useAuth();
 
   const checkAuth = useCallback(async () => {
-    const token = await refreshTokenState();
-    return Boolean(token);
+    try {
+      const token = await refreshTokenState();
+      return Boolean(token);
+    } catch (error) {
+      console.warn("auth.checkAuth failed", error);
+      return false;
+    }
   }, [refreshTokenState]);
 
   return { checkAuth };

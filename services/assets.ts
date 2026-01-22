@@ -24,21 +24,28 @@ const imageSourceMap: Record<ImageKey, ImageSourcePropType> = {
   "img-4": require("../assets/images/img-4.png"),
 };
 
+const getFallbackSource = <T extends string>(
+  sourceMap: Record<T, ImageSourcePropType>,
+  defaultKey: T
+) => sourceMap[defaultKey] ?? Object.values(sourceMap)[0];
+
 export const avatarKeys = AVATAR_KEYS;
 export const imageKeys = IMAGE_KEYS;
 
 export const getAvatarSource = (key: string): ImageSourcePropType => {
+  const fallback = getFallbackSource(avatarSourceMap, DEFAULT_AVATAR_KEY);
   if (!AVATAR_KEYS.includes(key as AvatarKey)) {
-    return avatarSourceMap[DEFAULT_AVATAR_KEY];
+    return fallback;
   }
 
-  return avatarSourceMap[key as AvatarKey] ?? avatarSourceMap[DEFAULT_AVATAR_KEY];
+  return avatarSourceMap[key as AvatarKey] ?? fallback;
 };
 
 export const getImageSource = (key: string): ImageSourcePropType => {
+  const fallback = getFallbackSource(imageSourceMap, DEFAULT_IMAGE_KEY);
   if (!IMAGE_KEYS.includes(key as ImageKey)) {
-    return imageSourceMap[DEFAULT_IMAGE_KEY];
+    return fallback;
   }
 
-  return imageSourceMap[key as ImageKey] ?? imageSourceMap[DEFAULT_IMAGE_KEY];
+  return imageSourceMap[key as ImageKey] ?? fallback;
 };

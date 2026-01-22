@@ -37,6 +37,16 @@ export default function ChatScreen() {
     [handlePress, styles]
   );
 
+  const renderEmpty = useCallback(
+    () => (
+      <View style={styles.emptyState}>
+        <Text style={styles.emptyTitle}>No chats yet</Text>
+        <Text style={styles.emptyText}>Add mock chats to see conversation threads here.</Text>
+      </View>
+    ),
+    [styles]
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -48,6 +58,7 @@ export default function ChatScreen() {
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         contentContainerStyle={styles.listContent}
+        ListEmptyComponent={renderEmpty}
       />
     </SafeAreaView>
   );

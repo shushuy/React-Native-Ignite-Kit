@@ -16,6 +16,7 @@ export default function MapScreen() {
   const styles = useMemo(() => createMapScreenStyles(colors), [colors]);
   const router = useRouter();
   const locations = useMemo(() => loadLocations(), []);
+  const hasLocations = locations.length > 0;
   const region = useMemo(() => calcMapRegion(locations), [locations]);
 
   return (
@@ -24,21 +25,28 @@ export default function MapScreen() {
         <Text style={styles.title}>Map</Text>
         <Text style={styles.subtitle}>Tap a marker to view the business details.</Text>
       </View>
-      <MapView style={styles.map} initialRegion={region}>
-        {locations.map((location) => (
-          <Marker
-            key={location.id}
-            coordinate={{ latitude: location.latitude, longitude: location.longitude }}
-            title={location.name}
-          >
-            <Callout onPress={() => router.push(ROUTES.mapDetail(location.id) as Href)}>
-              <View>
-                <Text>{location.name}</Text>
-              </View>
-            </Callout>
-          </Marker>
-        ))}
-      </MapView>
+      {hasLocations ? (
+        <MapView style={styles.map} initialRegion={region}>
+          {locations.map((location) => (
+            <Marker
+              key={location.id}
+              coordinate={{ latitude: location.latitude, longitude: location.longitude }}
+              title={location.name}
+            >
+              <Callout onPress={() => router.push(ROUTES.mapDetail(location.id) as Href)}>
+                <View>
+                  <Text>{location.name}</Text>
+                </View>
+              </Callout>
+            </Marker>
+          ))}
+        </MapView>
+      ) : (
+        <View style={styles.emptyState}>
+          <Text style={styles.emptyTitle}>No locations yet</Text>
+          <Text style={styles.emptyText}>Add mock locations to populate the map.</Text>
+        </View>
+      )}
     </SafeAreaView>
   );
 }

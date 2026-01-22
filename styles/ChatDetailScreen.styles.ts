@@ -14,6 +14,7 @@ export const createChatDetailScreenStyles = (colors: ThemeColors) =>
     listContent: {
       padding: 20,
       paddingBottom: 24,
+      flexGrow: 1,
     },
     messageRow: {
       width: "100%",
@@ -74,6 +75,24 @@ export const createChatDetailScreenStyles = (colors: ThemeColors) =>
       height: 180,
       borderRadius: 10,
       marginBottom: 8,
+    },
+    emptyState: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      paddingHorizontal: 24,
+    },
+    emptyTitle: {
+      fontSize: 16,
+      fontWeight: "600",
+      color: colors.text,
+      marginBottom: 6,
+    },
+    emptyText: {
+      fontSize: 13,
+      color: colors.mutedText,
+      textAlign: "center",
+      lineHeight: 18,
     },
     composer: {
       padding: 16,

@@ -28,6 +28,7 @@ export default function AgendaScreen() {
   const styles = useMemo(() => createAgendaScreenStyles(colors), [colors]);
   const router = useRouter();
   const events = useMemo(() => loadEvents(), []);
+  const hasEvents = events.length > 0;
   const today = new Date().toISOString().split("T")[0];
   const initialDate = useMemo(() => getDefaultEventDate(events, today), [events, today]);
   const [selectedDate, setSelectedDate] = useState(initialDate);
@@ -76,22 +77,22 @@ export default function AgendaScreen() {
       const agendaItem = item as AgendaItem;
 
       return (
-      <Pressable
-        onPress={() => router.push(ROUTES.agendaDetail(agendaItem.id) as Href)}
-        style={styles.agendaItem}
-      >
-        <ShiftBar startTime={agendaItem.startTime} endTime={agendaItem.endTime} />
-        <View style={styles.agendaRow}>
-          <Text style={styles.agendaTime}>
-            {agendaItem.startTime} - {agendaItem.endTime}
-          </Text>
-          <View style={styles.agendaChip}>
-            <Text style={styles.agendaChipText}>{getInitials(agendaItem.name)}</Text>
+        <Pressable
+          onPress={() => router.push(ROUTES.agendaDetail(agendaItem.id) as Href)}
+          style={styles.agendaItem}
+        >
+          <ShiftBar startTime={agendaItem.startTime} endTime={agendaItem.endTime} />
+          <View style={styles.agendaRow}>
+            <Text style={styles.agendaTime}>
+              {agendaItem.startTime} - {agendaItem.endTime}
+            </Text>
+            <View style={styles.agendaChip}>
+              <Text style={styles.agendaChipText}>{getInitials(agendaItem.name)}</Text>
+            </View>
           </View>
-        </View>
-        <Text style={styles.agendaTitle}>{agendaItem.name}</Text>
-        <Text style={styles.agendaLocation}>{agendaItem.location}</Text>
-      </Pressable>
+          <Text style={styles.agendaTitle}>{agendaItem.name}</Text>
+          <Text style={styles.agendaLocation}>{agendaItem.location}</Text>
+        </Pressable>
       );
     },
     [router, styles]
@@ -112,6 +113,11 @@ export default function AgendaScreen() {
         <Text style={styles.title}>Agenda</Text>
         <Text style={styles.subtitle}>Plan your schedule and track upcoming events.</Text>
       </View>
+      {!hasEvents ? (
+        <View style={styles.emptyNotice}>
+          <Text style={styles.emptyNoticeText}>No events available yet. Add mock events to get started.</Text>
+        </View>
+      ) : null}
       <Agenda
         items={items}
         loadItemsForMonth={loadItemsForMonth}

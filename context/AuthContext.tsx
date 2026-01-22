@@ -23,10 +23,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const refreshTokenState = useCallback(async () => {
     setIsLoading(true);
-    const storedToken = await getToken();
-    setTokenState(storedToken);
-    setIsLoading(false);
-    return storedToken;
+    try {
+      const storedToken = await getToken();
+      setTokenState(storedToken);
+      return storedToken;
+    } catch (error) {
+      console.warn("auth.refreshTokenState failed", error);
+      setTokenState(null);
+      return null;
+    } finally {
+      setIsLoading(false);
+    }
   }, []);
 
   const login = useCallback(async () => {

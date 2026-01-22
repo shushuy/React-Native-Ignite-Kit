@@ -1,5 +1,7 @@
 # React Native Ignite Kit Change Log
 
+- 2026-01-22 12:51 PM — Added app demo GIF to README. Outcome: README.md, planning/change-log.md.
+- 2026-01-22 12:48 PM — Hardened auth gate, added empty states, and improved UI safety/README troubleshooting. Outcome: app/index.tsx, hooks/useAuthGate.ts, context/AuthContext.tsx, app/(tabs)/chat/index.tsx, app/(tabs)/chat/[chatId].tsx, app/(tabs)/map/index.tsx, app/(tabs)/agenda/index.tsx, app/(tabs)/profile/index.tsx, styles/ChatListScreen.styles.ts, styles/ChatDetailScreen.styles.ts, styles/MapScreen.styles.ts, styles/AgendaScreen.styles.ts, styles/ProfileScreen.styles.ts, services/assets.ts, README.md, planning/change-log.md.
 - 2026-01-22 12:29 PM — Added padding to logo image for app icon spacing. Outcome: assets/images/logo.png, planning/change-log.md.
 - 2026-01-22 12:25 PM — Set app icon/logo to use assets/images/logo.png for iOS and Android. Outcome: app.config.ts, app.json, planning/change-log.md.
 - 2026-01-22 11:44 AM — Added image generation prompt template for chat demo assets. Outcome: planning/image-generation-prompts.md, planning/change-log.md.

@@ -17,6 +17,9 @@ export default function SplashScreen() {
   const segments = useSegments();
   const segmentsRef = useRef(segments);
   const hasRouted = useRef(false);
+  const isCheckingAuth = useRef(false);
+  const lastAuthCheckAt = useRef(0);
+  const isLoadingRef = useRef(isLoading);
 
   const routeByAuth = (isAuthenticated: boolean, activeSegments = segmentsRef.current) => {
     const currentGroup = activeSegments[0];
@@ -34,6 +37,10 @@ export default function SplashScreen() {
   useEffect(() => {
     segmentsRef.current = segments;
   }, [segments]);
+
+  useEffect(() => {
+    isLoadingRef.current = isLoading;
+  }, [isLoading]);
 
   useEffect(() => {
     if (hasRouted.current) {
@@ -54,8 +61,24 @@ export default function SplashScreen() {
         return;
       }
 
-      const isAuthenticated = await checkAuth();
-      routeByAuth(isAuthenticated);
+      if (isLoadingRef.current || isCheckingAuth.current) {
+        return;
+      }
+
+      const now = Date.now();
+      if (now - lastAuthCheckAt.current < 1000) {
+        return;
+      }
+
+      isCheckingAuth.current = true;
+      lastAuthCheckAt.current = now;
+
+      try {
+        const isAuthenticated = await checkAuth();
+        routeByAuth(isAuthenticated);
+      } finally {
+        isCheckingAuth.current = false;
+      }
     });
 
     return () => {

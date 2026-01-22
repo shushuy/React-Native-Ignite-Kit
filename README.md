@@ -2,6 +2,9 @@
 
 Blog Post Draft: `BLOG_POST.md` is gitignored and used for drafting.
 
+## App Demo
+![App demo](assets/readme/appDemo.gif)
+
 ## Mock Data
 Mock JSON lives in `/mock`. Asset keys in the JSON map to local images via `/services/assets.ts`, with fallbacks to template placeholders until real assets are added.
 
@@ -38,6 +41,12 @@ The Profile tab includes a local notifications demo using `expo-notifications`. 
 
 ## CI
 Runs on pushes to `main` and pull requests targeting `main`. Executes lint, `test:ci`, and typecheck.
+
+## Troubleshooting
+- Clear Metro cache: `npx expo start -c`
+- Reinstall dependencies: `rm -rf node_modules package-lock.json && npm install`
+- Maps not rendering: confirm permissions and rebuild native binaries for iOS/Android.
+- Calendar issues: verify `react-native-calendars` setup and re-run `npm install` if patches are missing.
 
 ## Linting & Formatting
 - `npm run lint`
